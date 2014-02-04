@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+
+{% block title %}Cursos de Django, Laravel, Wordpress y más para la web - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+
+        {% include 'secciones/sidebar_cursos.html' %}
+  
+        {% include 'base/curso/listado_cursos.html' %}
+
+    </div> <!-- end of contenido -->
+
+</section>
+{% endblock %}

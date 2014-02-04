@@ -1,0 +1,17 @@
+                <article>
+                    <header>
+                    <a href="{{ post.get_absolute_url }}">
+                        <img src="/media/{{ post.imagen_destacada }}" />
+                        <h2><a href="{{ post.get_absolute_url }}" title="{{ post.titulo }}">{{ post.titulo|truncatewords:8 }}</a></h2>
+                         <p>En <span data-role="categoria"><a href="{{ post.categoria.get_absolute_url }}">{{ post.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ post.autor }}</a></span> el <span data-role="fecha"><a href="">{{ post.creado|date:"d F" }}</a></span></p>                 
+                    </a>                    
+                    </header>
+                    <section class="contenido-articulo">
+                        {{ post.extracto|safe }}
+                        <div class="rrss">
+                            <a class="facebook" href=""></a>
+                            <a class="twitter"  href=""></a>
+                            <a class="google"   href=""></a>                    
+                        </div>                    
+                    </section>
+                </article>

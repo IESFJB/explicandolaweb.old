@@ -1,0 +1,202 @@
+article.articulo-detalle
+    display inline-block
+    vertical-align top
+    width 75%
+    background-color white
+    padding 2em
+    box-sizing border-box
+    margin-bottom 2em
+    position relative
+    overflow hidden
+    div.cuadrado
+        width 200px
+        height 200px
+        rotate(45deg);
+        position absolute
+        top -40px
+        right -180px
+        background-color #f1f4f9
+        box-shadow inset 2px 2px .5em #ccc
+        z-index 2
+        overflow hidden
+        img
+            rotate(-45deg)
+            max-width 40%
+            margin-top 117px
+            margin-left -0px
+
+    header
+        position relative
+        >p
+            font-size 0.9em
+            margin 0
+            margin-bottom 1em
+            display inline
+        h2
+            font-size 2.2em
+            line-height 1.2em
+            text-transform uppercase
+            margin-bottom .5em
+            border-bottom 1px solid whitesmoke
+            padding-bottom .5em
+            font-weight 400
+            text-shadow 2px 2px .5em whitesmoke
+        h3
+            margin-bottom 1.8em
+            p
+                color #999
+                font-size .8em
+                font-style italic
+
+    section.video
+        margin-left auto
+        margin-right auto
+        width 80%
+        margin-bottom 2em
+
+    figure
+        width 80%
+        display block
+        margin-left auto
+        margin-right auto
+        margin-bottom 2em
+        img
+            width 100%
+            width 670px
+            height 400px
+            box-shadow 4px 4px 2em #d3d3d3
+        figcaption
+            display none
+
+    aside.comparteme
+        width 400px
+        background-color AzulClaro
+        padding .5em 1em
+        text-align center
+        margin-left auto
+        margin-right auto
+        margin-bottom 2em
+        skew(-30deg,0deg)
+        overflow hidden
+        p
+            margin 0
+            color white
+            skew(30deg,0deg)
+            a
+                margin-top .5em
+                display inline-block
+                vertical-align middle
+                margin-left 0em
+                transition all .3s
+                font-size 0.7em
+                text-shadow none
+
+                &:before
+                    font-family "icomoon"
+                    font-size 1.6em
+                    font-weight 100 !important
+                    color white
+                &+a
+                    margin-left 1em
+                &.youtube
+                    &:before
+                        content "\e62d"
+                &.facebook
+                    &:before
+                        content "\e628"
+                &.twitter
+                    &:before
+                        content "\e624"
+                &.google
+                    &:before
+                        content "\e627"
+                &:first-child
+                    margin-left 1em
+
+
+    div.contenido-articulo
+        width 100%
+        display block
+        margin-top 1em
+        h2
+            font-size 1.6em
+            line-height 1.2em
+            margin-top 0
+            margin-bottom .5em
+            a
+                text-transform uppercase
+                font-weight 400
+                color CNegro
+                &:hover
+                    color AzulClaro
+        h3
+            border-bottom 1px solid whitesmoke
+            padding-bottom .5em
+            margin-top 1em
+        p
+            strong
+                font-weight 600
+
+    .social
+        margin-bottom 0em
+
+aside.autor
+    padding 2em
+    width 75%
+    margin-bottom 2em
+    box-sizing border-box
+    background-color white
+    border-top 1px solid transparent
+    border-left 1px solid transparent
+    border-top-left-radius 2em
+    img
+        display inline-block
+        vertical-align top
+        width 100px
+    div.perfil
+        display inline-block
+        vertical-align top
+        width 80%
+        margin-left 2em
+        h4
+            margin-top 0
+            border-bottom 1px solid whitesmoke
+            padding-bottom .5em
+            margin-bottom .5em
+            a
+                color CBase
+                &:hover
+                    color AzulClaro
+        p.rrss
+            a
+                display inline-block
+                vertical-align middle
+                margin-left 1em
+                transition all .3s
+                font-size 0.7em
+                text-shadow none
+                &:hover
+                    rotate 360deg
+                &:before
+                    font-family "icomoon"
+                    font-size 1.6em
+                    font-weight 100 !important
+                    color AzulClaro
+                &+a
+                    margin-left 1em
+                &.youtube
+                    &:before
+                        content "\e62d"
+                        color AzulClaro
+                &.facebook
+                    &:before
+                        content "\e628"
+                        color AzulClaro
+                &.twitter
+                    &:before
+                        content "\e624"
+                        color AzulClaro
+                &.google
+                    &:before
+                        content "\e627"
+                        color AzulClaro

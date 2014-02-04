@@ -1,0 +1,31 @@
+        <article class="articulo-detalle">
+            <header>
+                <p>En <span data-role="categoria"><a href="{{ curso.categoria.get_absolute_url }}">{{ curso.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ curso.autor }}</a></span> el <span data-role="fecha">{{ curso.creado|date:"d F Y" }}</span></p>                 
+                <h2>{{ curso.titulo }}</h2>
+                <h3>{{ curso.extracto|safe }}</h3>
+            </header>
+            <figure>
+                <figcaption>{{ curso.titulo }}</figcaption>
+                <img src="/media/{{ curso.imagen_destacada }}" />
+            </figure>
+            <aside class="comparteme">
+                <p>Si te gusta compártelo, es gratis
+                    <a class="facebook" href="{{ articulo.get_compartir_facebook }}"></a>
+                    <a class="twitter"  href="{{ articulo.get_compartir_twitter }}"></a>
+                    <a class="google"   href="{{ articulo.get_compartir_google }}"></a>
+                </p>
+            </aside>
+            <div class="contenido-articulo">
+                {{ curso.contenido|safe }}
+                <section class="listado-articulos">
+                    {% for capitulo in capitulos %}
+                        {% include 'base/curso/capitulos/capitulo_en_listado.html' %}
+                    {% endfor %}
+                </section>
+                <div class="social">
+                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
+                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
+                    <a class="google"   href=""></a>
+                </div> <!-- end of social -->
+            </div><!-- end of contenido-curso -->
+        </article>

@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}Título del Tutorial - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+
+        {% include 'secciones/sidebar_cursos.html' %}
+
+        {% include 'base/capitulo/capitulo_detalle.html' %}
+
+    </div> <!-- end of contenido -->
+
+</section>
+{% endblock %}
+
+{% block jsFooter %}
+
+{% endblock %}

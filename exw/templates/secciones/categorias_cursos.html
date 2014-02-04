@@ -1,0 +1,5 @@
+{% for cat in categorias_cursos %}
+    <a title="{{cat.nombre}}" {% if cat.active == True %} class="active" {% endif %} href="{{ cat.get_absolute_url }}">
+        <img src="/media/{{ cat.imagen }}" alt="{{ cat.descripcion }}" />
+    </a>
+{% endfor %}

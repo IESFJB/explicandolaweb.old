@@ -1,0 +1,13 @@
+        <section class="listado-articulos">
+
+            {% block titulo %}<h3>Últimos cursos</h3>{% endblock %}
+
+            <div class="articulos">
+
+                {% for curso in cursos %}
+                    {% include 'base/curso/curso_en_listado.html' %}
+                {% endfor %}
+
+            </div> <!-- /articulos -->
+
+        </section>

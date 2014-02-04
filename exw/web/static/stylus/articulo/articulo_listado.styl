@@ -1,0 +1,54 @@
+section.listado-articulos
+    display inline-block
+    vertical-align top
+    width 75%
+    margin-bottom 32px
+    background-color white
+    padding 32px
+    box-sizing border-box
+    font-size 0
+    h3
+        font-size 20px
+        text-transform uppercase
+        color black
+        margin-bottom 16px
+    article
+        font-size 16px
+        display inline-block
+        vertical-align top
+        width 30%
+        margin-right 5%
+        margin-bottom 2.6em
+        &:nth-child(3n)
+            margin-right 0
+        header
+            img
+                max-width 100%
+                height auto !important
+                transition all 200ms
+                box-shadow 4px 4px 1em #d3d3d3
+            h2
+                font-size 1.2em
+                line-height 1em
+                margin-top .4em
+                margin-bottom 0em
+                a
+                    text-transform uppercase
+                    color CNegro
+                    &:hover
+                        color AzulClaro
+            p
+                margin-top .8em
+                margin-bottom .5em
+        section.contenido-articulo
+            p
+                margin-top .5em
+                margin-bottom .5em
+        &:hover
+            img
+                margin-top -.5em
+                filter unquote("saturate(200%)")
+                -webkit-filter unquote("saturate(200%)")
+                -moz-filter unquote("saturate(200%)")
+                -o-filter unquote("saturate(200%)")
+                -ms-filter unquote("saturate(200%)")

@@ -1,0 +1,78 @@
+article.articulo-destacado
+    display inline-block
+    vertical-align top
+    width 75%
+    background-color white
+    padding 2em
+    box-sizing border-box
+    header
+        p
+            font-size 0.9em
+            margin 0
+    section.video
+        iframe
+            margin-left auto
+            margin-right auto
+    figure
+        width 68%
+        display inline-block
+        vertical-align top
+        img
+            max-width 100%
+            box-shadow 4px 4px 1em #d3d3d3
+            &:hover
+                filter unquote("saturate(200%)")
+                -webkit-filter unquote("saturate(200%)")
+                -moz-filter unquote("saturate(200%)")
+                -o-filter unquote("saturate(200%)")
+                -ms-filter unquote("saturate(200%)")
+        figcaption
+            display none
+    div.contenido-articulo
+        width 29%
+        margin-left 3%
+        display inline-block
+        vertical-align top
+        h2
+            font-size 1.4em
+            line-height 1.2em
+            margin-top 0
+            margin-bottom .5em
+            a
+                text-transform uppercase
+                font-weight 400
+                color CNegro
+                &:hover
+                    color AzulClaro
+    .social
+        margin-bottom 0em
+        margin-top 2em
+        display inline-block
+        vertical-align top
+        width 100%
+        a
+            display inline-block
+            vertical-align middle
+            margin-right 1em
+            transition all .3s
+            font-size 1.4em
+            text-shadow none
+            &:before
+                font-family "icomoon"
+                color #0099cc
+            &:hover
+                color white !important
+            &+a
+                margin-left 1em
+            &.youtube
+                &:before
+                    content "\e62d"
+            &.facebook
+                &:before
+                    content "\e628"
+            &.twitter
+                &:before
+                    content "\e624"
+            &.google
+                &:before
+                    content "\e627"

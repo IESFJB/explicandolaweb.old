@@ -1,0 +1,19 @@
+{% extends "home.html" %}
+
+{% block title %}Blog - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+        <h2>Blog</h2>
+        {% include 'secciones/sidebar.html' %}
+    {% if destacado %}
+        {% include 'articulos/articulo_destacado.html' %}
+    {% endif %}
+        {% include 'base/articulo/listado_articulos.html' %}
+
+    </div> <!-- end of contenido -->
+</section>
+{% endblock %}

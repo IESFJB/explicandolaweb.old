@@ -1,0 +1,17 @@
+                <article>
+                    <header>
+                    <a href="#">
+                        <img src="/media/cursos/2014/01/27/caratulahtml.jpg">
+                        <h2><a href="" title="{{ capitulo.titulo }}">{{ capitulo.titulo|truncatewords:8 }}</a></h2>
+                         <p>En <span data-role="categoria"><a href="{{ capitulo.categoria.get_absolute_url }}">{{ capitulo.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ capitulo.autor }}</a></span> el <span data-role="fecha"><a href="">{{ capitulo.creado|date:"d F" }}</a></span></p>                 
+                    </a>                    
+                    </header>
+                    <section class="contenido-articulo">
+                        {{ capitulo.extracto|safe }}
+                        <div class="rrss">
+                            <a class="facebook" href=""></a>
+                            <a class="twitter"  href=""></a>
+                            <a class="google"   href=""></a>                    
+                        </div>                    
+                    </section>
+                </article>

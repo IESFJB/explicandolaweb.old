@@ -1,0 +1,33 @@
+        <article class="articulo-detalle">
+            <header>
+                <p>En <span data-role="categoria"><a href="{{ capitulo.categoria.get_absolute_url }}">{{ articulo.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ articulo.autor.first_name }} {{ articulo.autor.last_name }}</a></span> el <span data-role="fecha">{{ articulo.creado|date:"d F Y" }}</span></p>
+                <div class="cuadrado">
+                    <img src="/media/{{ capitulo.categoria.imagen }}" alt="">
+                </div>
+                <h2>{{ capitulo.titulo }}</h2>
+                <h3>{{ capitulo.extracto|safe }}</h3>
+            </header>
+            {% if capitulo.video %}
+            <section class="video">
+                <iframe width="670" height="400" src="//www.youtube.com/embed/{{ capitulo.video }}" frameborder="0" allowfullscreen></iframe>
+            </section>
+            {% else %}
+            <figure>
+                <figcaption>{{ capitulo.titulo }}</figcaption>
+                <img src="/media/{{ capitulo.imagen_destacada }}" />
+            </figure>
+            {% endif %}
+            <aside class="comparteme">
+                <p>Si te gusta compártelo, es gratis
+                    <a class="facebook" href="{{ capitulo.get_compartir_facebook }}"></a>
+                    <a class="twitter"  href="{{ capitulo.get_compartir_twitter }}"></a>
+                    <a class="google"   href="{{ capitulo.get_compartir_google }}"></a>
+                </p>
+            </aside>
+            <div class="contenido-articulo">
+                {{ capitulo.contenido|safe }}
+            </div><!-- end of contenido-articulo -->
+
+        </article>
+
+        {% include 'base/perfiles/profile_articulo.html' %}

@@ -1,0 +1,17 @@
+                <article>
+                    <header>
+                    <a href="{{ curso.get_absolute_url }}">
+                        <img src="/media/{{ curso.imagen_destacada }}" />
+                        <h2><a href="{{ curso.get_absolute_url }}" title="{{ curso.titulo }}">{{ curso.titulo|truncatewords:8 }}</a></h2>
+                         <p>En <span data-role="categoria"><a href="{{ curso.categoria.get_absolute_url }}">{{ curso.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ curso.autor }}</a></span> el <span data-role="fecha"><a href="">{{ curso.creado|date:"d F" }}</a></span></p>                 
+                    </a>                    
+                    </header>
+                    <section class="contenido-articulo">
+                        {{ curso.extracto|safe }}
+                        <div class="rrss">
+                            <a class="facebook" href=""></a>
+                            <a class="twitter"  href=""></a>
+                            <a class="google"   href=""></a>                    
+                        </div>                    
+                    </section>
+                </article>

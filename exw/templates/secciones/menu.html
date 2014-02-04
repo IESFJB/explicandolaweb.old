@@ -1,0 +1,3 @@
+<nav class="cl-effect-10">
+	{% for item in menu %}<a href="{{item.url}}" data-hover="{{item.text}}" {% if item.active %} class="active" {% endif %}><span>{{item.text}}</span></a>{% endfor %}
+</nav>

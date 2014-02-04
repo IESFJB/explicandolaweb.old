@@ -1,0 +1,122 @@
+[
+{
+    "pk": 1, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 1, 
+        "imagen": "categorias/html5.png", 
+        "creado": "2014-01-21T17:05:09.380Z", 
+        "descripcion": "", 
+        "nombre": "Html5", 
+        "actualizado": "2014-01-21T17:11:33.372Z"
+    }
+},
+{
+    "pk": 2, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 2, 
+        "imagen": "categorias/css3.png", 
+        "creado": "2014-01-21T17:10:25.015Z", 
+        "descripcion": "", 
+        "nombre": "Css3", 
+        "actualizado": "2014-01-21T17:11:41.932Z"
+    }
+},
+{
+    "pk": 3, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 3, 
+        "imagen": "categorias/js.png", 
+        "creado": "2014-01-21T17:10:54.780Z", 
+        "descripcion": "", 
+        "nombre": "Javascript", 
+        "actualizado": "2014-01-21T17:10:54.780Z"
+    }
+},
+{
+    "pk": 4, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 4, 
+        "imagen": "categorias/php.png", 
+        "creado": "2014-01-21T17:11:19.933Z", 
+        "descripcion": "", 
+        "nombre": "Php", 
+        "actualizado": "2014-01-21T17:11:19.933Z"
+    }
+},
+{
+    "pk": 5, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 5, 
+        "imagen": "categorias/python.png", 
+        "creado": "2014-01-21T17:11:59.837Z", 
+        "descripcion": "", 
+        "nombre": "Python", 
+        "actualizado": "2014-01-21T17:11:59.837Z"
+    }
+},
+{
+    "pk": 6, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 6, 
+        "imagen": "categorias/nodejs.png", 
+        "creado": "2014-01-21T17:12:22.125Z", 
+        "descripcion": "", 
+        "nombre": "Node JS", 
+        "actualizado": "2014-01-21T17:12:32.264Z"
+    }
+},
+{
+    "pk": 7, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 7, 
+        "imagen": "categorias/laravel.png", 
+        "creado": "2014-01-21T17:13:12.456Z", 
+        "descripcion": "", 
+        "nombre": "Laravel", 
+        "actualizado": "2014-01-21T17:13:12.456Z"
+    }
+},
+{
+    "pk": 8, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 8, 
+        "imagen": "categorias/django.png", 
+        "creado": "2014-01-21T17:13:41.223Z", 
+        "descripcion": "", 
+        "nombre": "Django", 
+        "actualizado": "2014-01-21T17:13:55.905Z"
+    }
+},
+{
+    "pk": 9, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 10, 
+        "imagen": "categorias/github.png", 
+        "creado": "2014-01-21T17:14:38.570Z", 
+        "descripcion": "", 
+        "nombre": "Github", 
+        "actualizado": "2014-01-21T17:16:38.169Z"
+    }
+},
+{
+    "pk": 10, 
+    "model": "categorias.categoria", 
+    "fields": {
+        "orden": 9, 
+        "imagen": "categorias/wordpress.png", 
+        "creado": "2014-01-21T17:15:07.448Z", 
+        "descripcion": "", 
+        "nombre": "Wordpress", 
+        "actualizado": "2014-01-21T17:16:27.664Z"
+    }
+}
+]

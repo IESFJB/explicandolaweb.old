@@ -1,0 +1,39 @@
+        <article class="articulo-detalle">
+            <header>
+                <p>En <span data-role="categoria"><a href="{{ post.categoria.get_absolute_url }}">{{ post.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ post.autor }}</a></span> el <span data-role="fecha">{{ post.creado|date:"d F Y" }}</span></p>                 
+                <div class="cuadrado">
+                    <img src="/media/{{ post.categoria.imagen }}" alt="">
+                </div>
+                <h2>{{ post.titulo }}</h2>
+                <h3>{{ post.extracto|safe }}</h3>
+            </header>
+            <figure>
+                <figcaption>{{ post.titulo }}</figcaption>
+                <img src="/media/{{ post.imagen_destacada }}" />
+            </figure>
+            <aside class="comparteme">
+                <p>Si te gusta compártelo, es gratis
+                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
+                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
+                    <a class="google"   href=""></a>
+                </p>
+            </aside>
+            <div class="contenido-articulo">
+                {{ post.contenido|safe }}
+                <div class="social">
+                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
+                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
+                    <a class="google"   href=""></a>
+                </div> <!-- end of social -->
+            </div><!-- end of contenido-post -->
+        </article>
+
+        <aside class="etiquetas">
+            <p><label>Etiquetas: </label>
+            {% for etiqueta in post.tags.names %}
+                <a href="">{{etiqueta}}</a>
+            {% endfor %}
+            </p>
+        </aside>
+
+        {% include 'base/perfiles/profile_post.html' %}

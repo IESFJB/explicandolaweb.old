@@ -1,0 +1,69 @@
+{% extends "layout.html" %}
+
+{% block title %}Cursos y tutoriales para la web - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+        <aside id="sidebar">
+            <div class="contenido">
+                <h1>Cursos de Django, Laravel, Wordpress y más</h1>
+                <p>Lipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <aside id="categorias" class="contenido">
+                    <h2>Categorías</h2>
+                    {% include 'categorias.html' %}
+            </aside>
+        </aside>
+  
+        <section class="listado-articulos">
+
+            <h3>Últimos tutoriales</h3>
+
+            <div class="articulos">
+
+                {% for articulo in articulos %}
+                <article>
+                    <header>
+                    <a href="{{ articulo.get_absolute_url }}">
+                        <img src="/media/{{ articulo.imagen_destacada }}" />
+                        <h2><a href="{{ articulo.get_absolute_url }}" title="{{ articulo.titulo }}">{{ articulo.titulo }}</a></h2>
+                         <p>En <span data-role="categoria"><a href="">Javascript</a></span>, por <span data-role="autor"><a href="">{{ articulo.autor }}</a></span> en <span data-role="fecha"><a href="">{{ articulo. }}</a></span></p>                 
+                    </a>                    
+                    </header>
+                    <section class="contenido-articulo">
+                        {{ articulo.extracto|safe }}
+                        <div class="rrss">
+                            <a class="facebook" href=""></a>
+                            <a class="twitter"  href=""></a>
+                            <a class="google"   href=""></a>                    
+                        </div>                    
+                    </section>
+                </article>
+                {% endfor %}
+
+            </div> <!-- /articulos -->
+
+            <section class="navegacion">
+                <ul>
+                    <li><a href="" class="active">1</a></li>
+                    <li><a href="">2</a></li>
+                    <li><a href="">3</a></li>
+                    <li><a href="">...</a></li>
+                    <li><a href="">7</a></li>
+                    <li><a href="">8</a></li>
+                    <li><a href="">9</a></li>
+                </ul>
+            </section>
+
+        </section>
+    </div> <!-- end of contenido -->
+
+</section>
+{% endblock %}
+
+{% block jsFooter %}
+
+{% endblock %}

@@ -1,0 +1,9 @@
+            {% load static from staticfiles %}
+            <aside class="autor">
+                <img src="{% static "img/00comun/tagui_autor.png" %}" />
+                <div class="perfil">
+                    <h4><a href="#">{{ post.autor.first_name }} {{ post.autor.last_name }}</a></h4>
+                    <p>{{ post.autor.perfil.descripcion }}</p>
+                    <p class="rrss">Lo puedes encontrar en: <a href="http://facebook.com/{{ post.autor.perfil.facebook }}" class="facebook"></a> <a href="http://twitter.com/{{ post.autor.perfil.twitter }}" class="twitter"></a> <a href="{{ post.autor.perfil.google }}" class="google"></a></p>
+                </div>
+            </aside>

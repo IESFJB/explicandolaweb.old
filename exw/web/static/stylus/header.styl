@@ -1,0 +1,120 @@
+#wrapper
+    >header
+        background #ffffff
+        padding-top 1em
+        padding-bottom 1em
+        margin-bottom 2em
+        .contenido
+            max-width anchura_total
+            margin-left auto
+            margin-right auto
+        figure
+            display inline-block
+            width 25%
+            img
+                display block
+                height auto
+                width 100%
+            span
+                display inline-block
+                vertical-align top
+                width 50%
+                font-family FTitulos
+                font-weight 600
+                color white
+                font-size 1.8em
+                letter-spacing 1px
+        div.derecha
+            display inline-block
+            vertical-align top
+            width 75%
+
+        nav
+            text-align left
+            margin-top -10px
+            display inline-block
+            vertical-align top
+            width 70%
+            margin-top 0.5em
+            padding-left 2em
+            box-sizing border-box
+            a
+                position relative
+                display inline-block
+                margin 10px 10px
+                outline none
+                color AzulClaro
+                text-decoration none
+                text-transform uppercase
+                letter-spacing 1px
+                font-weight 400
+                text-shadow 0 0 1px rgba(255,255,255,0.3)
+                font-size: 1.2em
+
+                &:hover
+                &:focus
+                    outline none
+
+                &:last-child
+                    margin-right 0 !important
+                &+a
+                    margin-left .2em
+        div.rrss
+            text-align right
+            margin-bottom 0em
+            margin-top 1.7em
+            display inline-block
+            vertical-align top
+            width 30%
+            a
+                display inline-block
+                vertical-align middle
+                margin-left 1em
+                transition all .3s
+                font-size 0.7em
+                text-shadow none
+                &:hover
+                    rotate 360deg
+                &:before
+                    font-family "icomoon"
+                    font-size 1.6em
+                    font-weight 100 !important
+                    color AzulClaro
+                &+a
+                    margin-left 2em
+                &.youtube
+                    &:before
+                        content "\e62d"
+                        color AzulClaro
+                &.facebook
+                    &:before
+                        content "\e628"
+                        color AzulClaro
+                &.twitter
+                    &:before
+                        content "\e624"
+                        color AzulClaro
+                &.google
+                    &:before
+                        content "\e627"
+                        color AzulClaro
+            div.buscador
+                display inline-block
+                vertical-align top
+                margin-left 4em
+                input
+                    font-size 0.9em
+                    padding 0.2em 0.4em
+                    width 160px
+                    box-shadow none
+                    border 1px solid white
+                    display none
+                a.buscar
+                    opacity .7
+                    &:hover
+                        opacity 1
+                    &:before
+                        font-family "icomoon"
+                        font-size 1em
+                        content "\e632"
+                        color white
