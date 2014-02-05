@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 
+
 from django.db import models
 #from articulos.models import Auditoria
 from tinymce.models import HTMLField

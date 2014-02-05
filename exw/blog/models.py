@@ -1,10 +1,12 @@
 # -*- encoding: utf-8 -*-
 
+
 from django.db import models
 from articulos.models import Articulo
 from taggit.managers import TaggableManager
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
+
 
 class Post(Articulo):
     tags = TaggableManager(blank=True)

@@ -1,3 +1,6 @@
+# -*- encoding: utf-8 -*-
+
+
 from django.views.generic import DetailView, ListView
 from .models import Tutorial
 

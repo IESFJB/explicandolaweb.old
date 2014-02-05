@@ -1,5 +1,6 @@
 # -*- encoding: utf-8 -*-
 
+
 from django.views.generic import DetailView
 from .models import Categoria
 from django.shortcuts import get_object_or_404
