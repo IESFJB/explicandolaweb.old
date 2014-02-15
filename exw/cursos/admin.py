@@ -7,11 +7,11 @@ from mce_filebrowser.admin import MCEFilebrowserAdmin
 
 
 class CapituloAdmin(MCEFilebrowserAdmin):
-    list_display = ('titulo', 'creado', 'actualizado', 'activo', 'destacado', 'imagen_destacada')
+    list_display = ('curso', 'titulo', 'creado', 'activo', 'destacado', )
 
 
 class CursoAdmin(MCEFilebrowserAdmin):
-    list_display = ('titulo', 'creado', 'actualizado', 'activo', 'destacado', 'imagen_destacada')
+    list_display = ('titulo', 'creado', 'activo', 'destacado', )
 
 
 admin.site.register(Curso, CursoAdmin)

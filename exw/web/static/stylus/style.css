@@ -1297,19 +1297,6 @@ aside.articulo_autor {
   background-color: #ced2d6;
   color: #09c;
 }
-aside.temario {
-  padding-bottom: 1em;
-}
-aside.temario h3 {
-  margin-bottom: 0.5em !important;
-}
 aside.temario ol {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-aside.temario ol li {
-  font-size: 0.9em;
-}
-aside.temario ol li a:hover {
-  text-decoration: underline;
+  padding: 0 !important;
 }

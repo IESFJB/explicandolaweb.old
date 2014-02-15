@@ -1,6 +1,6 @@
         <article class="articulo-detalle">
             <header>
-                <p>En <span data-role="categoria"><a href="{{ capitulo.categoria.get_absolute_url }}">{{ articulo.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ articulo.autor.first_name }} {{ articulo.autor.last_name }}</a></span> el <span data-role="fecha">{{ articulo.creado|date:"d F Y" }}</span></p>
+                <p>En <span data-role="categoria"><a href="{{ capitulo.categoria.get_absolute_url }}">{{ capitulo.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ capitulo.autor.first_name }} {{ capitulo.autor.last_name }}</a></span> el <span data-role="fecha">{{ capitulo.creado|date:"d F Y" }}</span></p>
                 <div class="cuadrado">
                     <img src="/media/{{ capitulo.categoria.imagen }}" alt="">
                 </div>

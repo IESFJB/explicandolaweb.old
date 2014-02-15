@@ -8,6 +8,7 @@ from django.contrib.sites.models import get_current_site
 
 from categorias.models import Categoria
 
+from django.utils.encoding import force_unicode
 
 class Auditoria(models.Model):
     creado = models.DateTimeField(auto_now_add=True)
@@ -25,8 +26,9 @@ class Articulo(Auditoria):
     categoria = models.ForeignKey(Categoria)
     contenido = HTMLField(blank=True)
     extracto = HTMLField(blank=True)
-    meta_description = models.CharField(max_length=250, blank=True)
-    fb_description = models.CharField(max_length=250, blank=True)
+
+    def __unicode__(self):
+        return force_unicode(self.titulo)
 
     class Meta:
         abstract = True
@@ -38,6 +40,9 @@ class Articulo(Auditoria):
         request = None
         ruta_completa = ''.join(['http://', get_current_site(request).domain, self.get_absolute_url()])
         return ruta_completa
+
+    def get_meta_description(self):
+        return self.titulo
 
     def get_compartir_facebook(self):
         return 'http://www.facebook.com/sharer.php?u='+self.get_ruta_completa()

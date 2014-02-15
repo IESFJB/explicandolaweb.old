@@ -21,5 +21,4 @@ DATABASES = {
     }
 }
 
-
 INSTALLED_APPS += ('mockups',)

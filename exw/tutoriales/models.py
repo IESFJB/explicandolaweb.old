@@ -10,7 +10,6 @@ from articulos.models import Articulo
 
 
 class Tutorial(Articulo):
-    fb_imagen = models.ImageField(upload_to='tutoriales/facebook/%Y/%m/%d/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
     video = models.CharField(max_length=100, blank=True, null=True)
 
@@ -23,6 +22,9 @@ class Tutorial(Articulo):
 
     def get_absolute_url(self):
         return reverse('tutoriales.views.detalle_tutorial', kwargs={'pk': self.pk, 'slug': slugify(self.titulo)})
+
+    def get_meta_description(self):
+        return '%s - Explicando la Web' % self.titulo
 
     def get_anterior(self):
         anterior = Articulo.objects.filter(creado__lt=self.creado).order_by('creado')

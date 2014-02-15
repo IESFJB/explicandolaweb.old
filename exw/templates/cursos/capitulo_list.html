@@ -7,16 +7,8 @@
 {% block content %}
 <section id="centro">
     <div class="contenido">
-        <aside id="sidebar">
-            <div class="contenido">
-                <h1>Cursos de Django, Laravel, Wordpress y más</h1>
-                <p>Lipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <aside id="categorias" class="contenido">
-                    <h2>Categorías</h2>
-                    {% include 'categorias.html' %}
-            </aside>
-        </aside>
+
+        {% include 'secciones/sidebar_cursos.html' %}
   
         <section class="listado-articulos">
 

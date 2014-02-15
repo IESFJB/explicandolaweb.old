@@ -4,7 +4,7 @@
 from django.test import TestCase
 from django.contrib.auth.models import User
 
-from articulos.models import Articulo
+from tutoriales.models import Tutorial
 from categorias.models import Categoria
 from cursos.models import Curso, Capitulo
 from blog.models import Post
@@ -27,15 +27,15 @@ class ExwTest(TestCase):
         self.categoria.save()
 
         #Articulo
-        self.articulo = Articulo()
-        self.articulo.titulo = "Hola k ase"
-        self.articulo.categoria = self.categoria
-        self.articulo.autor = self.usuario
-        self.articulo.contenido = ''
-        self.articulo.extracto = ''
-        self.articulo.imagen_destacada = ''
-        self.articulo.destacado = True
-        self.articulo.save()
+        self.tutorial = Tutorial()
+        self.tutorial.titulo = "Hola k ase"
+        self.tutorial.categoria = self.categoria
+        self.tutorial.autor = self.usuario
+        self.tutorial.contenido = ''
+        self.tutorial.extracto = ''
+        self.tutorial.imagen_destacada = ''
+        self.tutorial.destacado = True
+        self.tutorial.save()
 
         #Curso
         self.curso = Curso()
@@ -89,14 +89,14 @@ class ExwTest(TestCase):
         self.assertEqual(cat.orden, 1)
 
         #Articulo
-        art = Articulo.objects.get(pk=self.articulo.id)
-        self.assertEqual("Hola k ase", art.titulo)
-        self.assertEqual(cat, art.categoria)
-        self.assertEqual(usuario, art.autor)
-        self.assertEqual('', art.contenido)
-        self.assertEqual('', art.extracto)
-        self.assertEqual('', art.imagen_destacada)
-        self.assertEqual(True, art.destacado)
+        tut = Tutorial.objects.get(pk=self.tutorial.id)
+        self.assertEqual("Hola k ase", tut.titulo)
+        self.assertEqual(cat, tut.categoria)
+        self.assertEqual(usuario, tut.autor)
+        self.assertEqual('', tut.contenido)
+        self.assertEqual('', tut.extracto)
+        self.assertEqual('', tut.imagen_destacada)
+        self.assertEqual(True, tut.destacado)
 
         #Curso
         curso = Curso.objects.get(pk=self.curso.id)
@@ -140,7 +140,7 @@ class ExwTest(TestCase):
         self.assertEqual(200, response.status_code)
 
         #Vista detalle del tutorial
-        response = self.client.get(self.articulo.get_absolute_url())
+        response = self.client.get(self.tutorial.get_absolute_url())
         self.assertEqual(200, response.status_code)
 
         #Cursos

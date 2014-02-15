@@ -1,7 +1,7 @@
         <aside id="sidebar">
-            <aside class="mas-cursos">
-                    <h3>Más cursos sobre:</h3>
-                    {% include 'secciones/categorias_cursos.html' %}
+            <aside class="temario">
+                <h3>Temario:</h3>
+                {{ curso.temario|safe }}
             </aside>
             <aside class="ultimos-articulos">
                     {% include 'secciones/ultimos_articulos.html' %}                

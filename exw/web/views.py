@@ -46,7 +46,7 @@ tutoriales = Tutoriales.as_view()
 
 
 class Cursos(TemplateView):
-    template_name = "cursos.html"
+    template_name = "cursos/curso_list.html"
 
     def get_context_data(self, **kwargs):
         context = super(Cursos, self).get_context_data(**kwargs)

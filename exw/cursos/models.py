@@ -13,11 +13,7 @@ from articulos.models import Articulo
 class Curso(Articulo):
     ncapitulos = models.PositiveIntegerField(max_length=2, blank=True, null=True, verbose_name=u'Número de capítulos')
     temario = HTMLField(blank=True)
-    fb_imagen = models.ImageField(upload_to='cursos/facebook/%Y/%m/%d/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='cursos/%Y/%m/%d/')
-
-    def __unicode__(self):
-        return self.titulo
 
     class Meta:
         verbose_name = u'Curso'
@@ -30,11 +26,10 @@ class Curso(Articulo):
 class Capitulo(Articulo):
     curso = models.ForeignKey('Curso', related_name='Curso')
     orden = models.PositiveIntegerField(max_length=2, default=1)
-    fb_imagen = models.ImageField(upload_to='capitulos/facebook/%Y/%m/%d/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='capitulos/%Y/%m/%d/')
 
-    def __unicode__(self):
-        return '%s - %s - %s' % (self.curso,self.orden,self.titulo)
+    # def __unicode__(self):
+    #     return '%s - %s - %s' % (self.curso,self.orden,self.titulo)
 
     class Meta:
         verbose_name = u'Capítulo'
@@ -65,5 +60,3 @@ class Capitulo(Articulo):
         else:
             siguiente = False
         return siguiente
-
-

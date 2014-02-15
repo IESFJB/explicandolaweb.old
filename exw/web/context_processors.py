@@ -4,7 +4,7 @@
 from django.core.urlresolvers import reverse
 from tutoriales.models import Tutorial
 from categorias.models import Categoria
-from cursos.models import Curso
+from blog.models import Post
 
 
 def menu(request):
@@ -28,16 +28,6 @@ def categorias_tutoriales(request):
     }
     return categorias_tutoriales
 
-
-def categorias_cursos(request):
-    cat_concursos = Curso.objects.values_list('categoria', flat=True).distinct()
-    categorias_cursos = Categoria.objects.filter(pk__in=cat_concursos).order_by('orden')
-    categorias_cursos = {
-        'categorias_cursos': categorias_cursos,
-    }
-    return categorias_cursos
-
-
 def ultimos_tutoriales(request):
     ultimos_tutoriales = Tutorial.objects.all()
     ultimos_tutoriales = {
@@ -52,3 +42,9 @@ def ultimos_capitulos(request):
     }
     return ultimos_capitulos
 
+def ultimos_post(request):
+    ultimos_post = Post.objects.all()
+    ultimos_post = {
+        'ultimos_post': ultimos_post,
+    }
+    return ultimos_post

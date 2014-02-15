@@ -35,7 +35,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'south',
+    #'south',
     'tinymce',
     'sorl.thumbnail',
     'mce_filebrowser',
@@ -68,9 +68,9 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
     'web.context_processors.menu',
     'web.context_processors.categorias_tutoriales',
-    'web.context_processors.categorias_cursos',
     'web.context_processors.ultimos_tutoriales',
     'web.context_processors.ultimos_capitulos',
+    'web.context_processors.ultimos_post',
 )
 
 ROOT_URLCONF = 'exw.urls'
