@@ -20,11 +20,8 @@ class Migration(SchemaMigration):
             ('categoria', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['categorias.Categoria'])),
             ('contenido', self.gf('tinymce.models.HTMLField')(blank=True)),
             ('extracto', self.gf('tinymce.models.HTMLField')(blank=True)),
-            ('meta_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
-            ('fb_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
             ('ncapitulos', self.gf('django.db.models.fields.PositiveIntegerField')(max_length=2, null=True, blank=True)),
             ('temario', self.gf('tinymce.models.HTMLField')(blank=True)),
-            ('fb_imagen', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('imagen_destacada', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
         ))
         db.send_create_signal(u'cursos', ['Curso'])
@@ -41,11 +38,8 @@ class Migration(SchemaMigration):
             ('categoria', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['categorias.Categoria'])),
             ('contenido', self.gf('tinymce.models.HTMLField')(blank=True)),
             ('extracto', self.gf('tinymce.models.HTMLField')(blank=True)),
-            ('meta_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
-            ('fb_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
             ('curso', self.gf('django.db.models.fields.related.ForeignKey')(related_name='Curso', to=orm['cursos.Curso'])),
             ('orden', self.gf('django.db.models.fields.PositiveIntegerField')(default=1, max_length=2)),
-            ('fb_imagen', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('imagen_destacada', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
         ))
         db.send_create_signal(u'cursos', ['Capitulo'])
@@ -118,11 +112,8 @@ class Migration(SchemaMigration):
             'curso': ('django.db.models.fields.related.ForeignKey', [], {'related_name': "'Curso'", 'to': u"orm['cursos.Curso']"}),
             'destacado': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'extracto': ('tinymce.models.HTMLField', [], {'blank': 'True'}),
-            'fb_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
-            'fb_imagen': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'imagen_destacada': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'meta_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'orden': ('django.db.models.fields.PositiveIntegerField', [], {'default': '1', 'max_length': '2'}),
             'titulo': ('django.db.models.fields.CharField', [], {'max_length': '150'})
         },
@@ -136,11 +127,8 @@ class Migration(SchemaMigration):
             'creado': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'destacado': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'extracto': ('tinymce.models.HTMLField', [], {'blank': 'True'}),
-            'fb_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
-            'fb_imagen': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'imagen_destacada': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'meta_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'ncapitulos': ('django.db.models.fields.PositiveIntegerField', [], {'max_length': '2', 'null': 'True', 'blank': 'True'}),
             'temario': ('tinymce.models.HTMLField', [], {'blank': 'True'}),
             'titulo': ('django.db.models.fields.CharField', [], {'max_length': '150'})

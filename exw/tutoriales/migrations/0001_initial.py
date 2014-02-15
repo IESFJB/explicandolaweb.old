@@ -20,9 +20,6 @@ class Migration(SchemaMigration):
             ('categoria', self.gf('django.db.models.fields.related.ForeignKey')(to=orm['categorias.Categoria'])),
             ('contenido', self.gf('tinymce.models.HTMLField')(blank=True)),
             ('extracto', self.gf('tinymce.models.HTMLField')(blank=True)),
-            ('meta_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
-            ('fb_description', self.gf('django.db.models.fields.CharField')(max_length=250, blank=True)),
-            ('fb_imagen', self.gf('django.db.models.fields.files.ImageField')(max_length=100, null=True, blank=True)),
             ('imagen_destacada', self.gf('django.db.models.fields.files.ImageField')(max_length=100)),
             ('video', self.gf('django.db.models.fields.CharField')(max_length=100, null=True, blank=True)),
         ))
@@ -92,11 +89,8 @@ class Migration(SchemaMigration):
             'creado': ('django.db.models.fields.DateTimeField', [], {'auto_now_add': 'True', 'blank': 'True'}),
             'destacado': ('django.db.models.fields.BooleanField', [], {'default': 'False'}),
             'extracto': ('tinymce.models.HTMLField', [], {'blank': 'True'}),
-            'fb_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
-            'fb_imagen': ('django.db.models.fields.files.ImageField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'}),
             u'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
             'imagen_destacada': ('django.db.models.fields.files.ImageField', [], {'max_length': '100'}),
-            'meta_description': ('django.db.models.fields.CharField', [], {'max_length': '250', 'blank': 'True'}),
             'titulo': ('django.db.models.fields.CharField', [], {'max_length': '150'}),
             'video': ('django.db.models.fields.CharField', [], {'max_length': '100', 'null': 'True', 'blank': 'True'})
         }
