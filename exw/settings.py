@@ -1,7 +1,6 @@
-# -*- coding: utf-8 -*-
+# -*- encoding: utf-8 -*-
 
-#import os
-#BASE_DIR = os.path.dirname(os.path.dirname(__file__))
+########### BASE SETTINGS
 
 from unipath import Path
 PROJECT_DIR = Path(__file__).ancestor(2)
@@ -16,9 +15,9 @@ TEMPLATE_DIRS = (
     PROJECT_DIR.child("templates"),
 )
 
+import os
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'kt^((_@nf&!1hcd9v17^!@y&u3jq(nm==u8sb&porchv-qzl-6'
-
+SECRET_KEY = os.environ["KEY_DJANGO"]
 
 # Application definition
 INSTALLED_APPS = (
@@ -39,16 +38,16 @@ INSTALLED_APPS = (
     'tinymce',
     'sorl.thumbnail',
     'mce_filebrowser',
-    'mockups',
     'taggit',
 
     # ExplicandoLaWeb
-    'web',
-    'categorias',
     'articulos',
+    'categorias',
+    'tutoriales',
     'cursos',
     'blog',
     'perfiles',
+    'web',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -60,7 +59,6 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-
 TEMPLATE_CONTEXT_PROCESSORS = (
     'django.contrib.auth.context_processors.auth',
     'django.core.context_processors.request',
@@ -68,9 +66,10 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 
 TEMPLATE_CONTEXT_PROCESSORS = TEMPLATE_CONTEXT_PROCESSORS + (
     'web.context_processors.menu',
-    'web.context_processors.categorias_articulos',
-    'web.context_processors.categorias_cursos',
-    'web.context_processors.ultimos_articulos',
+    'web.context_processors.categorias_tutoriales',
+    'web.context_processors.ultimos_tutoriales',
+    'web.context_processors.ultimos_capitulos',
+    'web.context_processors.ultimos_post',
 )
 
 ROOT_URLCONF = 'exw.urls'
@@ -95,82 +94,24 @@ TINYMCE_DEFAULT_CONFIG = {
 
     'file_browser_callback': 'mce_filebrowser',
 }
+
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
 
-#Fin de base.py
-
-
-
-# STATICFILES_FINDERS = (
-#     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#     'django.contrib.staticfiles.finders.FileSystemFinder',
-# )
-
-
-# Configuracion del envio de emails
-# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-# EMAIL_HOST = 'localhost'
-# EMAIL_PORT = 25
-# EMAIL_HOST_USER = ''
-# EMAIL_HOST_PASSWORD = ''
-# EMAIL_USE_TLS = False
-
-# Django Social Auth
-# AUTHENTICATION_BACKENDS = (
-    # 'social_auth.backends.twitter.TwitterBackend',
-    # 'social_auth.backends.facebook.FacebookBackend',
-    # 'social_auth.backends.google.GoogleOAuth2Backend',
-    # 'django.contrib.auth.backends.ModelBackend',
-# )
-
-# TWITTER_CONSUMER_KEY        = 'drhXnJ6HHdCyr115UFhA'
-# TWITTER_CONSUMER_SECRET     = 'OSK3jjxI3YjAWE2lor7BaPaoCO2r9g2V87E6oH2otGY'
-# FACEBOOK_APP_ID             = ''
-# FACEBOOK_API_SECRET         = ''
-# GOOGLE_OAUTH2_CLIENT_ID     = ''
-# GOOGLE_OAUTH2_CLIENT_SECRET = ''
-
-# -*- coding: utf-8 -*-
-
-# settings/local.py
 
 # SECURITY
 DEBUG = True
 TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = ['explicandolaweb.bienvenido.webfactional.com']
+ALLOWED_HOSTS = ['*']
 
-# EMAIL SERVER
-#EMAIL_HOST = "localhost"
-#EMAIL_PORT = 1025
-
-# Database
 
 # DATABASE LOCAL
 DATABASES = {
     'default': {
         'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        'NAME':     'explicandolaweb',
-        'USER':     'explicandolaweb',
-        'PASSWORD': 'explicandolaweb',
+        'NAME':     os.environ["DB_NAME"],
+        'USER':     os.environ["DB_USER"],
+        'PASSWORD': os.environ["DB_PASS"],
         'HOST': ''
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': Path(PROJECT_DIR+'/bd.sqlite3'),
-#     }
-# }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'exw',
-#         'USER': 'root',
-#         'PASSWORD': 'root',
-#         'HOST': '127.0.0.1',
-#         'PORT': '3306',
-#     }
-# }
