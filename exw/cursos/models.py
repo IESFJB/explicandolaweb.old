@@ -28,9 +28,6 @@ class Capitulo(Articulo):
     orden = models.PositiveIntegerField(max_length=2, default=1)
     imagen_destacada = models.ImageField(upload_to='capitulos/%Y/%m/%d/')
 
-    # def __unicode__(self):
-    #     return '%s - %s - %s' % (self.curso,self.orden,self.titulo)
-
     class Meta:
         verbose_name = u'Capítulo'
         verbose_name_plural = u'Capítulos'

@@ -1,12 +1,12 @@
 <h2>Últimos artículos</h2>
-{% for tutorial in ultimos_tutoriales %}
+{% for post in ultimos_posts %}
     <article>
-        <a href="{{ tutorial.get_absolute_url }}" title="{{ tutorial.titulo }}">
+        <a href="{{ post.get_absolute_url }}" title="{{ post.titulo }}">
             <figure>
                 <figcaption></figcaption>
-                <img src="/media/{{ tutorial.imagen_destacada }}" />
+                <img src="/media/{{ post.imagen_destacada }}" />
             </figure>
-            <h4>{{ tutorial.titulo }}</h4>
+            <h4>{{ post.titulo }}</h4>
         </a>
     </article>
 {% endfor %}

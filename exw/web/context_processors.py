@@ -43,8 +43,8 @@ def ultimos_capitulos(request):
     return ultimos_capitulos
 
 def ultimos_post(request):
-    ultimos_post = Post.objects.all()
-    ultimos_post = {
-        'ultimos_post': ultimos_post,
+    ultimos_posts = Post.objects.all()
+    ultimos_posts = {
+        'ultimos_posts': ultimos_posts,
     }
-    return ultimos_post
+    return ultimos_posts
