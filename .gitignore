@@ -25,3 +25,9 @@ Icon
 *.log
 *.pot
 *.pyc
+
+# Webfaction
+apache2/
+bin/
+lib/
+
