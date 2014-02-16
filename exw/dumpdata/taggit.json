@@ -1,0 +1,4 @@
+[
+{"pk": 1, "model": "taggit.tag", "fields": {"name": "python", "slug": "python"}}, 
+{"pk": 2, "model": "taggit.tag", "fields": {"name": "hola-mundo", "slug": "hola-mundo"}}
+]
