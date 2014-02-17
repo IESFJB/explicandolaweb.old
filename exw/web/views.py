@@ -6,7 +6,7 @@ from tutoriales.models import Tutorial
 from cursos.models import Curso
 from blog.models import Post
 
-#from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 
 
@@ -18,7 +18,7 @@ def class_view_decorator(function_decorator):
     return simple_decorator
 
 
-#@class_view_decorator(login_required)
+@class_view_decorator(login_required)
 class Home(TemplateView):
     template_name = "home.html"
 
@@ -32,7 +32,7 @@ class Home(TemplateView):
 
 home = Home.as_view()
 
-
+@class_view_decorator(login_required)
 class Tutoriales(TemplateView):
     template_name = "tutoriales.html"
 
@@ -44,7 +44,7 @@ class Tutoriales(TemplateView):
 
 tutoriales = Tutoriales.as_view()
 
-
+@class_view_decorator(login_required)
 class Cursos(TemplateView):
     template_name = "cursos/curso_list.html"
 
@@ -58,7 +58,7 @@ class Cursos(TemplateView):
 
 cursos = Cursos.as_view()
 
-
+@class_view_decorator(login_required)
 class Blog(TemplateView):
     template_name = "blog.html"
 
@@ -72,7 +72,7 @@ class Blog(TemplateView):
 
 blog = Blog.as_view()
 
-
+@class_view_decorator(login_required)
 class Contacto(TemplateView):
     template_name = "home.html"
 

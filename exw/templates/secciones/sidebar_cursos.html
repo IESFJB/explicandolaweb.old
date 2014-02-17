@@ -1,8 +1,10 @@
         <aside id="sidebar">
+            {% if curso.temario %}
             <aside class="temario">
                 <h3>Temario:</h3>
                 {{ curso.temario|safe }}
             </aside>
+            {% endif %}
             <aside class="ultimos-articulos">
                     {% include 'secciones/ultimos_articulos.html' %}                
             </aside>
