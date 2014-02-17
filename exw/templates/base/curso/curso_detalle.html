@@ -1,7 +1,6 @@
         <article class="articulo-detalle curso">
             <header>
-                <p>En <span data-role="categoria"><a href="{{ curso.categoria.get_absolute_url }}">{{ curso.categoria }}</a></span>, por <span data-role="autor"><a href="">{{ curso.autor }}</a></span> el <span data-role="fecha">{{ curso.creado|date:"d F Y" }}</span></p>                 
-                <h2>{{ curso.titulo }}</h2>
+                <h2>Curso de {{ curso.titulo }}</h2>
                 <h3>{{ curso.extracto|safe }}</h3>
             </header>
             <figure>
@@ -17,7 +16,8 @@
             </aside>
             <div class="contenido-articulo">
                 {{ curso.contenido|safe }}
-                <section class="listado-articulos">
+                <section class="listado-capitulos">
+                    <h4>Capítulos del curso</h4>
                     {% for capitulo in capitulos %}
                         {% include 'base/curso/capitulos/capitulo_en_listado.html' %}
                     {% endfor %}

@@ -1313,3 +1313,71 @@ aside.temario ol li {
 aside.temario ol li a:hover {
   text-decoration: underline;
 }
+section.listado-capitulos {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+  margin-bottom: 32px;
+  background-color: #fff;
+  padding: 32px;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  font-size: 0;
+}
+section.listado-capitulos h4 {
+  font-size: 32px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 1.4em;
+}
+section.listado-capitulos h3 {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #000;
+  margin-bottom: 16px;
+}
+section.listado-capitulos article {
+  font-size: 16px;
+  display: inline-block;
+  vertical-align: top;
+  width: 45%;
+  margin-right: 5%;
+  margin-bottom: 2.6em;
+}
+section.listado-capitulos article:nth-child(2n) {
+  margin-right: 0;
+}
+section.listado-capitulos article header img {
+  max-width: 100%;
+  height: auto !important;
+  -webkit-transition: all 200ms;
+  transition: all 200ms;
+  -webkit-box-shadow: 4px 4px 1em #d3d3d3;
+  box-shadow: 4px 4px 1em #d3d3d3;
+}
+section.listado-capitulos article header h3 {
+  font-size: 1.4em;
+  line-height: 1.2em;
+  margin-top: 0.4em;
+  margin-bottom: 0em;
+}
+section.listado-capitulos article header h3 a {
+  text-transform: uppercase;
+  color: #333;
+}
+section.listado-capitulos article header h3 a:hover {
+  color: #09c;
+}
+section.listado-capitulos article section.contenido-articulo p {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+section.listado-capitulos article:hover img {
+  margin-top: -0.5em;
+  filter: saturate(200%);
+  -webkit-filter: saturate(200%);
+  -moz-filter: saturate(200%);
+  -o-filter: saturate(200%);
+  -ms-filter: saturate(200%);
+}

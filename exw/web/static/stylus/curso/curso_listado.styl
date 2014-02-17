@@ -1,0 +1,56 @@
+section.listado-capitulos
+    display inline-block
+    vertical-align top
+    width 100%
+    margin-bottom 32px
+    background-color white
+    padding 32px
+    box-sizing border-box
+    font-size 0
+    h4
+        font-size 32px
+        text-align center
+        text-transform uppercase
+        margin-bottom 1.4em
+    h3
+        font-size 20px
+        text-transform uppercase
+        color black
+        margin-bottom 16px
+    article
+        font-size 16px
+        display inline-block
+        vertical-align top
+        width 45%
+        margin-right 5%
+        margin-bottom 2.6em
+        &:nth-child(2n)
+            margin-right 0
+        header
+            img
+                max-width 100%
+                height auto !important
+                transition all 200ms
+                box-shadow 4px 4px 1em #d3d3d3
+            h3
+                font-size 1.4em
+                line-height 1.2em
+                margin-top .4em
+                margin-bottom 0em
+                a
+                    text-transform uppercase
+                    color CNegro
+                    &:hover
+                        color AzulClaro
+        section.contenido-articulo
+            p
+                margin-top .5em
+                margin-bottom .5em
+        &:hover
+            img
+                margin-top -.5em
+                filter unquote("saturate(200%)")
+                -webkit-filter unquote("saturate(200%)")
+                -moz-filter unquote("saturate(200%)")
+                -o-filter unquote("saturate(200%)")
+                -ms-filter unquote("saturate(200%)")
