@@ -1,6 +1,5 @@
 # -*- encoding: utf-8 -*-
 
-
 from django.views.generic import TemplateView
 from tutoriales.models import Tutorial
 from cursos.models import Curso
@@ -18,6 +17,12 @@ def class_view_decorator(function_decorator):
     return simple_decorator
 
 
+class ErrorTemplate(TemplateView):
+    template_name = "404.html"
+
+error_template = ErrorTemplate.as_view()
+
+
 @class_view_decorator(login_required)
 class Home(TemplateView):
     template_name = "home.html"
@@ -32,6 +37,7 @@ class Home(TemplateView):
 
 home = Home.as_view()
 
+
 @class_view_decorator(login_required)
 class Tutoriales(TemplateView):
     template_name = "tutoriales.html"
@@ -39,10 +45,13 @@ class Tutoriales(TemplateView):
     def get_context_data(self, **kwargs):
         context = super(Tutoriales, self).get_context_data(**kwargs)
         context['articulos'] = Tutorial.objects.filter(activo=True)[:9]
-        context['destacado'] = Tutorial.objects.get(destacado=True)
+        destacado = Tutorial.objects.filter(destacado=True)
+        if destacado.count() > 0:
+            context['destacado'] = destacado[0]
         return context
 
 tutoriales = Tutoriales.as_view()
+
 
 @class_view_decorator(login_required)
 class Cursos(TemplateView):
@@ -58,6 +67,7 @@ class Cursos(TemplateView):
 
 cursos = Cursos.as_view()
 
+
 @class_view_decorator(login_required)
 class Blog(TemplateView):
     template_name = "blog.html"
@@ -71,6 +81,7 @@ class Blog(TemplateView):
         return context
 
 blog = Blog.as_view()
+
 
 @class_view_decorator(login_required)
 class Contacto(TemplateView):

@@ -13,6 +13,8 @@ urlpatterns = patterns('',
 
     url(r'^$',          'web.views.home',           name='home'),
 
+    url(r'^error/$',    'web.views.error_template', name='error_template'),
+
     url(r'^tutoriales/$', 'web.views.tutoriales',   name='tutoriales'),
 
     url(r'^tutoriales/', include('tutoriales.urls')),

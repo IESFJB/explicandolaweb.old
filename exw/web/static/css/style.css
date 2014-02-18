@@ -583,7 +583,7 @@ section.navegacion ul li a.active {
   transform: translateX(0%);
 }
 .prettyprint {
-  font-size: 12px;
+  font-size: 1em;
   line-height: 1.5;
   border: 0px;
   padding: 20px 10px;
@@ -591,6 +591,7 @@ section.navegacion ul li a.active {
   border-radius: 1.2em;
   margin-top: 2.4em;
   margin-bottom: 2.4em;
+  font-weight: 200;
 }
 .pln {
   color: #4d4d4c;
@@ -734,6 +735,7 @@ ol.linenums {
   font-size: 0.9em;
   -webkit-box-shadow: -2px 2px 1em #d3d3d3;
   box-shadow: -2px 2px 1em #d3d3d3;
+  font-weight: 200;
 }
 .info {
   color: #31708f;
@@ -764,8 +766,39 @@ ol.linenums {
   border-right-style: solid;
   border-top-right-radius: 2em;
   border-bottom-left-radius: 2em;
+  font-size: 0.9em;
   -webkit-box-shadow: -2px 2px 1em #d3d3d3;
   box-shadow: -2px 2px 1em #d3d3d3;
+  font-weight: 200;
+}
+article.error404 {
+  background-color: #fff;
+  padding: 2em 10% 2em 20%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+}
+article.error404 img {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+}
+article.error404 >div {
+  display: inline-block;
+  vertical-align: top;
+  width: 65%;
+  margin-left: 5%;
+  padding-top: 3em;
+}
+article.error404 >div h1 {
+  margin-bottom: 1em;
+}
+article.error404 >div h2 {
+  line-height: 1.4em;
+}
+article.error404 >div a {
+  font-weight: 200;
 }
 #centro {
   -webkit-box-sizing: border-box;
@@ -1264,9 +1297,6 @@ article.articulo-destacado .social a.twitter:before {
 }
 article.articulo-destacado .social a.google:before {
   content: "\e627";
-}
-aside.articulo_autor {
-  display: block;
 }
 .etiquetas {
   padding: 1em 2em;

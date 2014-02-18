@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block title %}Error 404 - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+        <article class="error404">
+            <img src="{% static "img/00comun/tagui_404.png" %}">
+            <div>
+                <h1>Error 404</h1>
+                <h2>Ups!, lo que buscas no está disponible. ¿No te interesaría ver tutoriales sobre <a href="">Django</a>, <a href="">Láravel</a>, <a href="">Wordpress</a>, <a href="">PHP</a>, <a href="">CSS</a> etc... ?</h2>
+            </div>
+        </article>
+    </div> <!-- end of contenido -->
+</section>
+{% endblock %}
