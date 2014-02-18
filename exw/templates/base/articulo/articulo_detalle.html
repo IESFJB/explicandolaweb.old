@@ -27,7 +27,21 @@
             <div class="contenido-articulo">
                 {{ articulo.contenido|safe }}
             </div><!-- end of contenido-articulo -->
-
         </article>
 
+        {% if articulo.tags.names %}  
+        <aside class="etiquetas">
+            <p><label>Etiquetas: </label>
+            {% for etiqueta in articulo.tags.names %}
+                <a href="">{{ etiqueta }}</a>
+            {% endfor %}
+            </p>
+        </aside>
+        {% endif %}
+
         {% include 'base/perfiles/profile_articulo.html' %}
+
+        <section class="disqs">
+            {% load disqus_tags %}
+            {% disqus_show_comments %}
+        </section>
