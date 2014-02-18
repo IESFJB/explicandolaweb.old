@@ -509,6 +509,7 @@ body {
 #wrapper >footer div.contenido p.copy {
   text-align: center;
   margin-top: 2em;
+  margin-bottom: 0;
 }
 section.navegacion ul {
   list-style: none;

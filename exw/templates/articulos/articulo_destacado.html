@@ -7,13 +7,13 @@
             </figure><div class="contenido-articulo">
                 <header>
                     <h2><a href="{{ destacado.get_absolute_url }}" title="destacado.titulo">{{ destacado.titulo|truncatewords:8 }}</a></h2>
-                    <p>En <span data-role="categoria"><a href="">{{ destacado.categoria }}</a></span>, por <span data-role="autor"><a href="/autores/{{destacado.autor.username}}">{{ destacado.autor.first_name }} {{ destacado.autor.last_name }}</a></span> el <span data-role="fecha">{{ destacado.creado|date:"d F" }}</span></p>                 
+                    <p>En <span data-role="categoria"><a href="">{{ destacado.categoria }}</a></span>, por <span data-role="autor"><a href="/autores/{{destacado.autor.username}}">{{ destacado.autor.first_name }} {{ destacado.autor.last_name }}</a></span> el <span data-role="fecha">{{ destacado.creado|date:"d" }} de {{ destacado.creado|date:"F" }}  de {{ destacado.creado|date:"Y" }}</span></p>                 
                 </header>
                 <p>{{ destacado.extracto|safe }}</p>
                 <div class="social">
-                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
-                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
-                    <a class="google"   href=""></a>
+                    <a class="facebook" href="{{ destacado.get_compartir_facebook }}"></a>
+                    <a class="twitter"  href="{{ destacado.get_compartir_twitter }}"></a>
+                    <a class="google"   href="{{ destacado.get_compartir_google }}"></a>
                 </div> <!-- end of social -->
             </div><!-- end of contenido-articulo -->
         </article>

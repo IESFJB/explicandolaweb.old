@@ -13,21 +13,17 @@
             </figure>
             <aside class="comparteme">
                 <p>Si te gusta compártelo, es gratis
-                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
-                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
-                    <a class="google"   href=""></a>
+                    <a class="facebook" href="{{ post.get_compartir_facebook }}"></a>
+                    <a class="twitter"  href="{{ post.get_compartir_twitter }}"></a>
+                    <a class="google"   href="{{ post.get_compartir_google }}"></a>
                 </p>
             </aside>
             <div class="contenido-articulo">
                 {{ post.contenido|safe }}
-                <div class="social">
-                    <a class="facebook" href="https://www.facebook.com/ExplicandoLaWeb"></a>
-                    <a class="twitter"  href="https://twitter.com/explicandolaweb"></a>
-                    <a class="google"   href=""></a>
-                </div> <!-- end of social -->
             </div><!-- end of contenido-post -->
         </article>
 
+        {% if post.tags.names %}  
         <aside class="etiquetas">
             <p><label>Etiquetas: </label>
             {% for etiqueta in post.tags.names %}
@@ -35,5 +31,6 @@
             {% endfor %}
             </p>
         </aside>
+        {% endif %}
 
         {% include 'base/perfiles/profile_post.html' %}
