@@ -30,4 +30,9 @@
 
         </article>
 
-        {% include 'base/perfiles/profile_articulo.html' %}
+        {% include 'base/perfiles/profile_capitulo.html' %}
+
+        <section class="disqs">
+            {% load disqus_tags %}
+            {% disqus_show_comments %}
+        </section>

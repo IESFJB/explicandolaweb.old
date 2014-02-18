@@ -34,3 +34,8 @@
         {% endif %}
 
         {% include 'base/perfiles/profile_post.html' %}
+
+        <section class="disqs">
+            {% load disqus_tags %}
+            {% disqus_show_comments %}
+        </section>

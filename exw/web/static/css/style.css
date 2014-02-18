@@ -801,6 +801,17 @@ article.error404 >div h2 {
 article.error404 >div a {
   font-weight: 200;
 }
+.disqs {
+  display: inline-block;
+  vertical-align: top;
+  width: 75%;
+  background-color: #fff;
+  padding: 2em;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  margin-bottom: 2em;
+}
 #centro {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;

@@ -6,6 +6,7 @@ Unipath==1.0
 django-admin-tools==0.5.1
 django-taggit==0.11.2
 django-tinymce==1.5.2
+django-disqus==0.4.1
 httplib2==0.8
 pip-tools==0.3.4
 python-openid==2.2.5

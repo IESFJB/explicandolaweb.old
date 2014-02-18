@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'sorl.thumbnail',
     'mce_filebrowser',
     'taggit',
+    'disqus',
 
     # ExplicandoLaWeb
     'articulos',
@@ -50,6 +51,9 @@ INSTALLED_APPS = (
     'perfiles',
     'web',
 )
+
+DISQUS_API_KEY = os.environ["DISQS_KEY"]
+DISQUS_WEBSITE_SHORTNAME = 'explicandolaweb'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',

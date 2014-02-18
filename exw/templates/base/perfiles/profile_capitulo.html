@@ -1,0 +1,9 @@
+            {% load static from staticfiles %}
+            <aside class="autor">
+                <img src="{% static "img/00comun/tagui_autor.png" %}">
+                <div class="perfil">
+                    <h4><a href="#">{{ capitulo.autor.first_name }} {{ capitulo.autor.last_name }}</a></h4>
+                    <p>{{ capitulo.autor.perfil.descripcion }}</p>
+                    <p class="rrss">Me puedes encontrar en: <a href="http://facebook.com/{{ capitulo.autor.perfil.facebook }}" class="facebook"></a> <a href="http://twitter.com/{{ capitulo.autor.perfil.twitter }}" class="twitter"></a> <a href="{{ capitulo.autor.perfil.google }}" class="google"></a></p>
+                </div>
+            </aside>
