@@ -6,6 +6,7 @@ from django.db import models
 from taggit.managers import TaggableManager
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
+from datetime import datetime    
 
 from articulos.models import Articulo
 
@@ -14,6 +15,7 @@ class Tutorial(Articulo):
     tags = TaggableManager(blank=True)
     imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
     video = models.CharField(max_length=100, blank=True, null=True)
+    publicacion = models.DateTimeField(default=datetime.now)
 
     def __unicode__(self):
         return self.titulo
