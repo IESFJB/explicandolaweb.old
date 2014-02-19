@@ -584,15 +584,17 @@ section.navegacion ul li a.active {
   transform: translateX(0%);
 }
 .prettyprint {
-  font-size: 0.8em;
-  line-height: 1.5;
+  line-height: 1.4em;
   border: 0px;
-  padding: 20px 10px;
+  padding: 20px 20px;
   background-color: #f1f4f9;
   border-radius: 1.2em;
   margin-top: 2.4em;
   margin-bottom: 2.4em;
   font-weight: 200;
+  letter-spacing: 1px;
+  word-spacing: 3px;
+  overflow: auto;
 }
 .pln {
   color: #4d4d4c;
@@ -679,6 +681,10 @@ section.navegacion ul li a.active {
 ol.linenums {
   margin-top: 0;
   margin-bottom: 0;
+}
+ol.linenums li {
+  margin-bottom: 0.4em;
+  font-size: 0.9em;
 }
 .fila {
   font-size: 0;

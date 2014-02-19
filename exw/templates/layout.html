@@ -54,7 +54,7 @@
 
     </head>
 
-    <body onload="prettyPrint()">
+    <body>
         <div id="wrapper">
             <header>
                 <div class="contenido">
@@ -90,6 +90,14 @@
 		<!-- Vendors -->
 	    <script src="{% static "js/vendor/jquery1.10.2.min.js" %}"></script>
         <script src="{% static "js/vendor/prettify/prettify.js" %}"></script>
+
+        <script>
+          !function ($) {
+            $(function(){
+              window.prettyPrint && prettyPrint()   
+            })
+          }(window.jQuery)
+        </script>
 
         {% block jsFooter %}
         
