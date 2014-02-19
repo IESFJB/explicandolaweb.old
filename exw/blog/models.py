@@ -6,12 +6,14 @@ from articulos.models import Articulo
 from taggit.managers import TaggableManager
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
+from datetime import datetime    
 
 
 class Post(Articulo):
     tags = TaggableManager(blank=True)
     fb_imagen = models.ImageField(upload_to='blog/facebook/%Y/%m/%d/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='blog/%Y/%m/%d/')
+    publicacion = models.DateTimeField(default=datetime.now)
 
     def __unicode__(self):
         return self.titulo
