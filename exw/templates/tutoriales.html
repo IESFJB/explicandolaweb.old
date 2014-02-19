@@ -1,3 +1,18 @@
 {% extends "home.html" %}
+
 {% block title %}Tutoriales de Django, Laravel, Wordpress y más para la web - Explicando la Web{% endblock %}
-{% block titulo %}<h3>Últimos tutoriales</h3>{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+        {% include 'secciones/sidebar_tutoriales.html' %}
+    {% if destacado %}
+        {% include 'tutoriales/tutorial_destacado.html' %}
+    {% endif %}
+        {% include 'base/tutoriales/listado_tutoriales.html' %}
+
+    </div> <!-- end of contenido -->
+</section>
+{% endblock %}

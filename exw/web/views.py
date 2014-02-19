@@ -44,8 +44,8 @@ class Tutoriales(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Tutoriales, self).get_context_data(**kwargs)
-        context['articulos'] = Tutorial.objects.filter(activo=True)[:9]
-        destacado = Tutorial.objects.filter(destacado=True)
+        context['articulos'] = Tutorial.objects.filter(activo=True, destacado=False)[:9]
+        destacado = Tutorial.objects.filter(activo=True, destacado=True)
         if destacado.count() > 0:
             context['destacado'] = destacado[0]
         return context
@@ -59,7 +59,7 @@ class Cursos(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Cursos, self).get_context_data(**kwargs)
-        context['cursos'] = Curso.objects.filter(activo=True)[:9]
+        context['cursos'] = Curso.objects.filter(activo=True, destacado=False)[:9]
         destacado = Curso.objects.filter(destacado=True)
         if destacado.count() > 0:
             context['destacado'] = destacado[0]

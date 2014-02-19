@@ -584,7 +584,7 @@ section.navegacion ul li a.active {
   transform: translateX(0%);
 }
 .prettyprint {
-  font-size: 1em;
+  font-size: 0.8em;
   line-height: 1.5;
   border: 0px;
   padding: 20px 10px;
@@ -771,6 +771,13 @@ ol.linenums {
   -webkit-box-shadow: -2px 2px 1em #d3d3d3;
   box-shadow: -2px 2px 1em #d3d3d3;
   font-weight: 200;
+}
+section.listado-articulos >h2:first-child {
+  margin-top: 0;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  text-transform: uppercase;
+  border-bottom: 1px solid #f5f5f5;
 }
 article.error404 {
   background-color: #fff;
@@ -1224,6 +1231,12 @@ article.articulo-destacado {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+article.articulo-destacado >h2 {
+  text-transform: uppercase;
+  margin-bottom: 1em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #f5f5f5;
+}
 article.articulo-destacado header p {
   font-size: 0.9em;
   margin: 0;
@@ -1236,6 +1249,7 @@ article.articulo-destacado figure {
   width: 68%;
   display: inline-block;
   vertical-align: top;
+  position: relative;
 }
 article.articulo-destacado figure img {
   max-width: 100%;

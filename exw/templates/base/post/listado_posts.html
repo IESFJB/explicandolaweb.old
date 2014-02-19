@@ -1,7 +1,8 @@
         <section class="listado-articulos">
 
-            {% block titulo %}<h3>Últimos Posts</h3>{% endblock %}
-
+        {% if not destacado %}
+            <h2>completos</h2>
+        {% endif %}
             <div class="articulos">
 
                 {% for post in posts %}
