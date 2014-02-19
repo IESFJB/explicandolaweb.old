@@ -5,6 +5,7 @@ from django.db import models
 
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
+from datetime import datetime    
 
 from tinymce.models import HTMLField
 from articulos.models import Articulo
@@ -14,6 +15,7 @@ class Curso(Articulo):
     ncapitulos = models.PositiveIntegerField(max_length=2, blank=True, null=True, verbose_name=u'Número de capítulos')
     temario = HTMLField(blank=True)
     imagen_destacada = models.ImageField(upload_to='cursos/%Y/%m/%d/')
+    publicacion = models.DateTimeField(default=datetime.now)
 
     class Meta:
         verbose_name = u'Curso'
