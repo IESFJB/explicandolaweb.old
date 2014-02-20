@@ -64,5 +64,6 @@ body .ocultar{opacity:0}
 body ul{margin-left:0}
 body .clearfix{clear:both}
 img{display:block;max-width:80%;margin:0 auto}
-#wrapper{width:40%;margin:0 auto;text-align:center;}
+body{background-image:url("/static/img/00comun/pequenos.png") !important}
+#wrapper{width:40%;margin:0 auto;text-align:center;background-color:rgba(255,255,255,0.75);border-radius:2em;}
 #wrapper h1{text-align:center;margin-top:.5em;margin-bottom:.5em;line-height:1.2em}
