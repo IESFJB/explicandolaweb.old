@@ -60,6 +60,43 @@ rojo_borde = #ebccd1
     font-size .9em
     box-shadow -2px 2px 1em #d3d3d3
     font-weight 200
+    position relative
+    &::before
+        font-family "icomoon"
+        font-size 1.8em
+        font-weight 100 !important
+        color #48494c
+        content "\e613"
+        margin-right .8em
+        display inline-block
+        vertical-align top
+        position absolute
+        top 50%
+        margin-top -13px
+        left 1em
+        opacity 1
+    p
+        display inline-block
+        vertical-align margin-top
+        width 92%
+        margin-left 8%
+        margin-top 0
+
+.callout.success
+    &::before
+        content "\e611"
+
+.callout.info
+    &::before
+        content "\e612"
+
+.callout.danger
+    &::before
+        content "\e614"
+
+.callout.warning
+    &::before
+        content "\e619"
 
 section.listado-articulos
     >h2
