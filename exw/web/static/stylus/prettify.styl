@@ -10,6 +10,35 @@
   letter-spacing 1px
   word-spacing 3px
   overflow auto
+  position relative
+  &.iconos
+    padding-top 3em
+    padding-bottom 3em
+    &::before
+        font-family "icomoon"
+        font-size 1.8em
+        font-weight 100 !important
+        color #48494c
+        content "\e61d"
+        margin-right .8em
+        display inline-block
+        vertical-align top
+        position absolute
+        top .5em
+        left .5em
+    &::after
+        font-family "icomoon"
+        font-size 1.8em
+        font-weight 100 !important
+        color #48494c
+        content "\e61c"
+        margin-right .8em
+        display inline-block
+        vertical-align top
+        position absolute
+        bottom .5em
+        right 0em
+
 
 .pln
   color #4d4d4c
@@ -119,6 +148,7 @@ ol.linenums
   li
     margin-bottom .4em
     font-size .9em
+    border-bottom 1px dashed #e4e4e4
 
 
 /* IE indents via margin-left */

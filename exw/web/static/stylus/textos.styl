@@ -25,7 +25,6 @@ rojo_borde = #ebccd1
     border-radius 4px
     box-sizing border-box
     font-size .9em
-    box-shadow -2px 2px 1em #d3d3d3
     font-weight 200
 
 .info
@@ -58,23 +57,21 @@ rojo_borde = #ebccd1
     border-top-right-radius 2em
     border-bottom-left-radius 2em
     font-size .9em
-    box-shadow -2px 2px 1em #d3d3d3
     font-weight 200
     position relative
     &::before
         font-family "icomoon"
         font-size 1.8em
         font-weight 100 !important
-        color #48494c
+        color #4d4d4d
         content "\e613"
         margin-right .8em
         display inline-block
         vertical-align top
         position absolute
         top 50%
-        margin-top -13px
+        margin-top -15px
         left 1em
-        opacity 1
     p
         display inline-block
         vertical-align margin-top
@@ -97,6 +94,59 @@ rojo_borde = #ebccd1
 .callout.warning
     &::before
         content "\e619"
+
+.github
+    margin 2em 0
+    padding 1em
+    font-size .9em
+    font-weight 200
+    position relative
+    background-color #eef1f8
+    padding-left 5.5em
+    width 60%
+    margin-left auto
+    margin-right auto
+    &::before
+        font-family "icomoon"
+        font-size 2em
+        font-weight 100 !important
+        color #4d4d4d
+        content "\e622"
+        margin-right .8em
+        display inline-block
+        vertical-align top
+        position absolute
+        top 40%
+        margin-top -12px
+        left 1em
+        line-height 1.4em
+    &:hover
+        &::before
+            color black
+            opacity 1
+    a
+        border-bottom 1px solid AzulClaro
+
+
+blockquote
+    font-size 1.4em
+    line-height 1.2em
+    font-family FTitulos
+    font-style italic
+    margin 1em 4em .5em 4em
+    color #4d4d4d
+    &::before
+        font-family FBase
+        font-size 1em
+        content '"'
+        display inline-block
+        margin-right .2em
+    &::after
+        font-family FBase
+        font-size 1em
+        content '"'
+        display inline-block
+        margin-left .2em
 
 section.listado-articulos
     >h2

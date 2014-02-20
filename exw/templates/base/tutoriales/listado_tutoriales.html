@@ -1,5 +1,5 @@
         <section class="listado-articulos">
-            
+            {% if articulos %}
             <h2>Tutoriales</h2>
 
             <div class="articulos">
@@ -9,5 +9,8 @@
                 {% endfor %}
 
             </div> <!-- /articulos -->
+            {% else %}
+            <h2>Todavía no hay tutoriales</h2>
+            {% endif %}
 
         </section>
