@@ -3,7 +3,7 @@
     <head>
         {% load static from staticfiles %}
         <meta charset="utf-8">
-        <title>{% block title %}Título a sustituir mediante bloque{% endblock %}</title>
+        <title>{% block title %}¡Ya mismo estamos! - Explicando la Web{% endblock %}</title>
 
         <meta name="robots" content="noindex">
         <meta name="Keywords" content="" />
@@ -43,7 +43,7 @@
 		<link href='http://fonts.googleapis.com/css?family=Dosis:200,400,800' rel='stylesheet' type='text/css'>
 
         <!-- Hoja de estilos -->
-        <link rel="stylesheet" href="{% static "css/style.css"%}" type="text/css" media="screen">
+        <link rel="stylesheet" href="{% static "css/previa.css"%}" type="text/css" media="screen">
 
         <!-- Normalize como único script que se carga en el header -->
         <script src="{% static "js/vendor/modernizr-2.6.2.min.js" %}"></script>
@@ -56,53 +56,13 @@
 
     <body>
         <div id="wrapper">
-            <header>
-                <div class="contenido">
-	          		<figure>
-                        <a href="/"><img src="{% static "img/00comun/logo_exw_footer.png" %}" alt="Logo Explicando la Web" /></a>
-	          		</figure><div class="derecha">
-		          		{% include 'secciones/menu.html' %}<div class="rrss">
-		          			<a target="blank" class="youtube"  href="http://youtube.com/explicandolaweb"></a>
-		          			<a target="blank" class="facebook" href="http://facebook.com/explicandolaweb"></a>
-		          			<a target="blank" class="twitter"  href="http://twitter.com/explicandolaweb"></a>
-		          			<a target="blank" class="google"   href=""></a>
-		          			<div class="buscador">
-	          					<input type="text" name="buscar" placeholder="Encuentra lo que buscas">
-                                <a href="" class="buscar"></a>          				
-		          			</div>
-		          		</div>	          			
-	          		</div>
-                </div>
-            </header> <!-- end header -->
 
-            {% block content %}
-
-            {% endblock %}
-
-            {% block sidebar %}
-
-            {% endblock %}            
-
-            {% include 'secciones/footer.html' %}
+            <h1>¡Ya casi estamos!</h1>
+            <img src="{% static "img/00comun/tagui_gigante.png" %}" alt="">
 
         </div> <!-- end #wrapper -->
 
 		<!-- Vendors -->
-	    <script src="{% static "js/vendor/jquery1.10.2.min.js" %}"></script>
-        <script src="{% static "js/vendor/prettify/prettify.js" %}"></script>
-
-        <script>
-          !function ($) {
-            $(function(){
-              window.prettyPrint && prettyPrint()   
-            })
-          }(window.jQuery)
-        </script>
-
-        {% block jsFooter %}
-        
-        {% endblock %}
-
     </body>
 
 </html>

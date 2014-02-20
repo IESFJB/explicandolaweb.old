@@ -15,7 +15,7 @@ class Tutorial(Articulo):
     tags = TaggableManager(blank=True)
     imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
     video = models.CharField(max_length=100, blank=True, null=True)
-    publicacion = models.DateTimeField(default=datetime.now)
+    publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
 
     def __unicode__(self):
         return self.titulo

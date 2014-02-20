@@ -13,7 +13,7 @@ class Post(Articulo):
     tags = TaggableManager(blank=True)
     fb_imagen = models.ImageField(upload_to='blog/facebook/%Y/%m/%d/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='blog/%Y/%m/%d/')
-    publicacion = models.DateTimeField(default=datetime.now)
+    publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
 
     def __unicode__(self):
         return self.titulo

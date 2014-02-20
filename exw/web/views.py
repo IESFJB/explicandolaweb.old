@@ -23,16 +23,44 @@ class ErrorTemplate(TemplateView):
 error_template = ErrorTemplate.as_view()
 
 
+class Previa(TemplateView):
+    template_name = "previa.html"
+
+previa = Previa.as_view()
+
+
 @class_view_decorator(login_required)
 class Home(TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, **kwargs):
         context = super(Home, self).get_context_data(**kwargs)
-        context['articulos'] = Tutorial.objects.filter(destacado=False)[:9]
-        destacado = Tutorial.objects.filter(destacado=True)
-        if destacado.count() > 0:
-            context['destacado'] = destacado[0]
+        context['tutoriales'] = Tutorial.objects.all().filter(destacado=False).order_by('-publicacion')[:6]
+        context['posts'] = Post.objects.all().filter(destacado=False).order_by('-publicacion')[:6]
+        
+        #Buscamos el tutorial y el post destacado más nuevo
+        t_destacado = Tutorial.objects.filter(destacado=True).order_by('-publicacion')
+        p_destacado = Post.objects.filter(destacado=True).order_by('-publicacion')
+
+        if t_destacado.count() > 0:
+            t_destacado = t_destacado[0]
+            #Buscamos el post destacado más nuevo
+            if p_destacado.count() > 0:
+                p_destacado = p_destacado[0]
+                #Nos quedamos con el más nuevo
+                print t_destacado.publicacion
+                print p_destacado.publicacion
+                if t_destacado.publicacion < p_destacado.publicacion:
+                    context['destacado'] = p_destacado
+                else:
+                    context['destacado'] = t_destacado                
+            #Si no hay el destacado será el tutorial
+            else:
+                context['destacado'] = t_destacado
+        else:
+            #Buscamos el post destacado más nuevo
+            if p_destacado.count() > 0:
+                context['destacado'] = p_destacado
         return context
 
 home = Home.as_view()
@@ -74,7 +102,7 @@ class Blog(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super(Blog, self).get_context_data(**kwargs)
-        context['articulos'] = Post.objects.filter(destacado=False)[:9]
+        context['posts'] = Post.objects.filter(destacado=False)[:9]
         destacado = Post.objects.filter(destacado=True)
         if destacado.count() > 0:
             context['destacado'] = destacado[0]

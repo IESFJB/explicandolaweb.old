@@ -7,7 +7,7 @@ from mce_filebrowser.admin import MCEFilebrowserAdmin
 
 
 class PostAdmin(MCEFilebrowserAdmin):
-    list_display = ('titulo', 'creado', 'actualizado', 'activo', 'destacado')
+    list_display = ('titulo', 'publicacion', 'creado', 'actualizado', 'activo', 'destacado')
 
 
 admin.site.register(Post, PostAdmin)

@@ -15,7 +15,7 @@ class Curso(Articulo):
     ncapitulos = models.PositiveIntegerField(max_length=2, blank=True, null=True, verbose_name=u'Número de capítulos')
     temario = HTMLField(blank=True)
     imagen_destacada = models.ImageField(upload_to='cursos/%Y/%m/%d/')
-    publicacion = models.DateTimeField(default=datetime.now)
+    publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
 
     class Meta:
         verbose_name = u'Curso'
