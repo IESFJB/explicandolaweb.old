@@ -40,6 +40,7 @@ INSTALLED_APPS = (
     'mce_filebrowser',
     'taggit',
     'disqus',
+    'admin_honeypot',
 
     # ExplicandoLaWeb
     'articulos',
