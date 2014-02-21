@@ -164,7 +164,7 @@ ol.linenums li{margin-bottom:.4em;font-size:.9em;border-bottom:1px dashed #e4e4e
 .github::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e622";margin-right:.8em;display:inline-block;vertical-align:top;position:absolute;top:40%;margin-top:-12px;left:1em;line-height:1.4em}
 .github:hover::before{color:#000;opacity:1;filter:alpha(opacity=100)}
 .github a{border-bottom:1px solid #09c}
-blockquote{font-size:1.4em;line-height:1.2em;font-family:'Dosis',sans-serif;font-style:italic;margin:1em 4em .5em 4em;color:#4d4d4d;}
+blockquote{font-size:1.4em;line-height:1.2em;font-family:'Dosis',sans-serif;font-style:italic;font-weight:100;margin:1em 4em .5em 4em;color:#4d4d4d;}
 blockquote::before{font-family:'Open Sans',sans-serif;font-size:1em;content:'"';display:inline-block;margin-right:.2em}
 blockquote::after{font-family:'Open Sans',sans-serif;font-size:1em;content:'"';display:inline-block;margin-left:.2em}
 section.listado-articulos >h2{margin-top:0;margin-bottom:1em;padding-bottom:.5em;text-transform:uppercase;border-bottom:1px solid #f5f5f5}
@@ -175,7 +175,7 @@ article.error404 >div h1{margin-bottom:1em}
 article.error404 >div h2{line-height:1.4em}
 article.error404 >div a{font-weight:200}
 .disqs{display:inline-block;vertical-align:top;width:75%;background-color:#fff;padding:2em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;margin-bottom:2em;border-bottom-right-radius:2em;border-top-left-radius:2em;}
-.disqs h4{margin-bottom:.5em}
+.disqs h4{margin-bottom:.5em;font-size:1.6em;color:#4d4d4d}
 #centro{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;}
 #centro .contenido{max-width:1243px !important;margin:0 auto}
 #sidebar{width:23%;float:right;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#fff;padding:1.5em;}

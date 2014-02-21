@@ -16,6 +16,7 @@ class Tutorial(Articulo):
     imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
     video = models.CharField(max_length=100, blank=True, null=True)
     publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
+    nivel = models.PositiveSmallIntegerField(default=0, blank=True, null=False)
 
     def __unicode__(self):
         return self.titulo
