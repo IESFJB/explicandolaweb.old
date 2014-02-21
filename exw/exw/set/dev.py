@@ -22,3 +22,4 @@ DATABASES = {
 }
 
 INSTALLED_APPS += ('mockups', 'admin_honeypot',)
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'

@@ -7,11 +7,16 @@
 {% block content %}
 <section id="centro">
     <div class="contenido">
-        {% include 'secciones/sidebar_tutoriales.html' %}
-    {% if destacado %}
-        {% include 'tutoriales/tutorial_destacado.html' %}
-    {% endif %}
-        {% include 'base/tutoriales/listado_tutoriales.html' %}
+        <div id="principal">
+
+        {% if destacado %}
+            {% include 'tutoriales/tutorial_destacado.html' %}
+        {% endif %}
+            {% include 'base/tutoriales/listado_tutoriales.html' %}
+
+        </div>
+
+            {% include 'secciones/sidebar_tutoriales.html' %}
 
     </div> <!-- end of contenido -->
 </section>

@@ -7,30 +7,34 @@
 {% block content %}
 <section id="centro">
     <div class="contenido">
-        {% include 'secciones/sidebar_home.html' %}
-    {% if destacado %}
-        {% include 'articulos/articulo_destacado.html' %}
-    {% endif %}
 
-        <section class="listado-articulos">
-            {% if tutoriales %}
-            <h2>Últimos tutoriales</h2>
-            <div class="articulos">
-                {% for articulo in tutoriales %}
-                    {% include 'base/articulo/articulo_en_listado.html' %}
-                {% endfor %}
-            </div> <!-- /articulos -->
-            {% endif %}
-            
-            {% if posts %}
-            <h2>Últimos artículos</h2>
-            <div class="articulos">
-                {% for post in posts %}
-                    {% include 'base/post/post_en_listado.html' %}
-                {% endfor %}
-            </div> <!-- /articulos -->
-            {% endif %}            
-        </section>
+        <div id="principal">
+        {% if destacado %}
+            {% include 'articulos/articulo_destacado.html' %}
+        {% endif %}
+
+            <section class="listado-articulos">
+                {% if tutoriales %}
+                <h2>Últimos tutoriales</h2>
+                <div class="articulos">
+                    {% for articulo in tutoriales %}
+                        {% include 'base/articulo/articulo_en_listado.html' %}
+                    {% endfor %}
+                </div> <!-- /articulos -->
+                {% endif %}
+                
+                {% if posts %}
+                <h2>Últimos artículos</h2>
+                <div class="articulos">
+                    {% for post in posts %}
+                        {% include 'base/post/post_en_listado.html' %}
+                    {% endfor %}
+                </div> <!-- /articulos -->
+                {% endif %}            
+            </section>            
+        </div>
+
+        {% include 'secciones/sidebar_home.html' %}
 
     </div> <!-- end of contenido -->
 </section>

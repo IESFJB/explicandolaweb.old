@@ -1,20 +1,20 @@
             {% load static from staticfiles %}
             <footer>
                 <div class="contenido">
-                    <div class="bienvenidosaez">
-                        <a class="bienvenidosaez" href="http://twitter.com/bienvenidosaez">
-                            <img src="{% static "img/00comun/bienvenidosaez.jpg" %}" alt="@bienvenidosaez">
-                            <span>@bienvenidosaez</span>
-                        </a>
-                    </div><div class="tagui-hipster">
+                    <nav>
+                        <ul>                            
+                        {% for item in menu %}<li><a href="{{item.url}}" data-hover="{{item.text}}" {% if item.active %} class="active" {% endif %}><span>{{item.text}}</span></a></li>{% endfor %}
+                        </ul>
+                    </nav>
+                    <div>
                         <img src="{% static "img/00comun/logo_exw_footer.png" %}" alt="Explicando la Web">
-                    </div><div class="jaimemse">
-                        <a class="jaimemse" href="http://twitter.com/jaimemse">
-                            <img src="{% static "img/00comun/jaimemse.jpg" %}" alt="@jaimemse">
-                            <span>@jaimemse</span>
-                        </a>
                     </div>
-                    
+                    <div class="rrss">
+                        <a target="blank" class="youtube"  href="http://youtube.com/explicandolaweb"></a>
+                        <a target="blank" class="facebook" href="http://facebook.com/explicandolaweb"></a>
+                        <a target="blank" class="twitter"  href="http://twitter.com/explicandolaweb"></a>
+                        <a target="blank" class="google"   href=""></a>
+                    </div>
                     <p class="copy">Copyright ® 2014 - Todos los derechos no registrados y compartidos</p>
                 </div>
             </footer>

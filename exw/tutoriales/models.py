@@ -10,7 +10,6 @@ from datetime import datetime
 
 from articulos.models import Articulo
 
-
 class Tutorial(Articulo):
     tags = TaggableManager(blank=True)
     imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
@@ -46,5 +45,20 @@ class Tutorial(Articulo):
         else:
             siguiente = False
         return siguiente
+
+    def save(self, *args, **kwargs):
+        if self.destacado:
+            for tut in Tutorial.objects.filter(destacado=True):
+                tut.destacado = False
+                tut.save()
+        super(Tutorial, self).save(*args, **kwargs)
+        import os
+        fo = open("media/"+str(self.imagen_destacada), "r+")
+        fileName, fileExtension = os.path.splitext(fo.name)
+        print fileName
+        print fileExtension
+        fileName = fileName+"aaaaaaaa"
+        os.rename("media/"+str(self.imagen_destacada),"media/"+fileName+fileExtension)
+
 
 

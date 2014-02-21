@@ -1,7 +1,10 @@
 #wrapper
     >footer
+        font-size 16px
+        margin-top 2em
         width 100%
         padding 2em
+        padding-bottom 1em
         box-sizing border-box
         background-color white
         &::before
@@ -11,33 +14,72 @@
         div.contenido
             max-width anchura_total
             margin 0 auto
-        
-            div.bienvenidosaez
-            div.jaimemse
-            div.tagui-hipster
+            font-size 0
+            p.copy
+                font-size 16px
+                text-align center
+                margin-top 0em
+                margin-bottom 0
+            div
                 display inline-block
                 vertical-align top
-                width 33%
-            div.tagui-hipster
-                img
-                    display block
-                    max-width 100%
-                    margin-left auto
-                    margin-right auto
-            div.bienvenidosaez
-            div.jaimemse
+                width 50%
                 text-align center
-                margin-top 1em
-                img
-                    max-width 50px
-                    border-radius 50%
-                    display block
-                    margin 0 auto
+
+        nav
+            display inline-block
+            overflow hidden
+            width 20%
+            font-size 16px
+            ul
+                margin 0
+                padding 0
+            li
+                display block
+                margin-bottom .4em
                 a
-                    span
-                        color #333
-                        transition all 0.5s
-            p.copy
-                text-align center
-                margin-top 2em
-                margin-bottom 0
+                    text-transform uppercase
+                    &:hover
+                    &.active
+                        //font-weight 400
+                        color white !important
+                        background-color AzulClaro
+                        padding 1px 6px
+        div.rrss
+            display inline-block
+            vertical-align top
+            width 25% !important
+            margin-top 2.5em
+            font-size 16px
+            a
+                display inline-block
+                vertical-align middle
+                margin-left 1em
+                transition all .3s
+                font-size .9em
+                text-shadow none
+                &:hover
+                    rotate 360deg
+                &:before
+                    font-family "icomoon"
+                    font-size 1.6em
+                    font-weight 100 !important
+                    color AzulClaro
+                &+a
+                    margin-left 2em
+                &.youtube
+                    &:before
+                        content "\e62d"
+                        color AzulClaro
+                &.facebook
+                    &:before
+                        content "\e628"
+                        color AzulClaro
+                &.twitter
+                    &:before
+                        content "\e624"
+                        color AzulClaro
+                &.google
+                    &:before
+                        content "\e627"
+                        color AzulClaro

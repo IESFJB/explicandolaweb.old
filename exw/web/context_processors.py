@@ -12,11 +12,16 @@ def menu(request):
         {'text': 'Tutoriales', 	 'url': reverse('tutoriales')},
         {'text': 'Cursos', 		 'url': reverse('cursos')},
         {'text': 'Blog', 		 'url': reverse('blog')},
-        {'text': 'Contacto', 	 'url': reverse('contacto')},
+        {'text': 'Exw', 	     'url': reverse('exw')},
     ]}
     for item in menu['menu']:
         if request.path == item['url']:
             item['active'] = True
+            break
+        else:
+            if item['text'].replace('/', '').lower() in request.get_full_path():
+                item['active'] = True
+                break
     return menu
 
 

@@ -29,7 +29,8 @@ urlpatterns = patterns('',
 
     url(r'^blog/',      include('blog.urls')), 
 
-    url(r'^contacto/$', 'web.views.contacto',       name='contacto'),
+    url(r'^exw/$',      'web.views.exw',            name='exw'),
+
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT}),
 

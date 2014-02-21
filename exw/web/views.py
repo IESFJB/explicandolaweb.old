@@ -112,7 +112,7 @@ blog = Blog.as_view()
 
 
 @class_view_decorator(login_required)
-class Contacto(TemplateView):
-    template_name = "home.html"
+class Exw(TemplateView):
+    template_name = "exw.html"
 
-contacto = Contacto.as_view()
+exw = Exw.as_view()

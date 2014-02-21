@@ -20,3 +20,10 @@ class Post(Articulo):
 
     def get_absolute_url(self):
         return reverse('blog.views.detalle_post', kwargs={'pk': self.pk, 'slug': slugify(self.titulo)})
+
+    def save(self, *args, **kwargs):
+        if self.destacado:
+            for post in Post.objects.filter(destacado=True):
+                post.destacado = False
+                post.save()
+        super(Post, self).save(*args, **kwargs)
