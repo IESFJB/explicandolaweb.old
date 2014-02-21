@@ -12,3 +12,4 @@ pip-tools==0.3.4
 python-openid==2.2.5
 six==1.5.2
 wsgiref==0.1.2
+django-admin-honeypot==0.2.5

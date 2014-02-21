@@ -21,4 +21,4 @@ DATABASES = {
     }
 }
 
-INSTALLED_APPS += ('mockups',)
+INSTALLED_APPS += ('mockups', 'admin_honeypot',)

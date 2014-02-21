@@ -34,9 +34,10 @@ urlpatterns = patterns('',
             'document_root': settings.MEDIA_ROOT}),
 
     (r'^tinymce/',          include('tinymce.urls')),
-    (r'^mce_filebrowser/', include('mce_filebrowser.urls')),
+    (r'^mce_filebrowser/',  include('mce_filebrowser.urls')),
     url(r'^admin_tools/',   include('admin_tools.urls')),
-    url(r'^admin/',         include(admin.site.urls)),
+    url(r'^admin/', include('admin_honeypot.urls')),
+    url(r'^exw_panel/',     include(admin.site.urls)),
 
 )
 

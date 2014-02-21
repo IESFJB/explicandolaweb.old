@@ -16,3 +16,4 @@ python-openid==2.2.5
 six==1.5.2
 sorl-thumbnail==11.12
 wsgiref==0.1.2
+django-admin-honeypot==0.2.5
