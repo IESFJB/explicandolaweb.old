@@ -6,6 +6,7 @@ from unipath import Path
 PROJECT_DIR = Path(__file__).ancestor(3)
 MEDIA_ROOT = PROJECT_DIR.child("media")
 STATIC_ROOT = PROJECT_DIR.child("static")
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
@@ -102,20 +103,3 @@ TINYMCE_DEFAULT_CONFIG = {
 
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True
-
-# SECURITY
-DEBUG = True
-TEMPLATE_DEBUG = True
-ALLOWED_HOSTS = ['*']
-
-
-# DATABASE LOCAL
-DATABASES = {
-    'default': {
-        'ENGINE':   'django.db.backends.postgresql_psycopg2',
-        'NAME':     os.environ["DB_NAME"],
-        'USER':     os.environ["DB_USER"],
-        'PASSWORD': os.environ["DB_PASS"],
-        'HOST': ''
-    }
-}

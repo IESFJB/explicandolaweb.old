@@ -9,7 +9,7 @@ STATIC_ROOT = PROJECT_DIR.child("static")
 STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
+STATIC_URL  = '/static/'
 MEDIA_URL = '/media/'
 
 TEMPLATE_DIRS = (

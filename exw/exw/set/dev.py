@@ -3,6 +3,7 @@
 ########### DEVELOPMENT SETTINGS
 from .base import *
 
+INSTALLED_APPS += ('mockups', 'admin_honeypot',)
 
 # SECURITY
 DEBUG = True
@@ -20,6 +21,3 @@ DATABASES = {
         'HOST': ''
     }
 }
-
-INSTALLED_APPS += ('mockups', 'admin_honeypot',)
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
