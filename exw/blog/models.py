@@ -12,7 +12,6 @@ import os
 
 class Post(Articulo):
     tags = TaggableManager(blank=True)
-    fb_imagen = models.ImageField(upload_to='blog/facebook/', blank=True, null=True)
     imagen_destacada = models.ImageField(upload_to='blog/')
     publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
 
