@@ -23,6 +23,15 @@
             </div><!-- end of contenido-post -->
         </article>
 
+        <aside class="navegacion">
+            {% if post.get_anterior %}
+            <a href="{{ post.get_anterior.get_absolute_url }}" class="izquierda">{{ post.get_anterior.titulo }}</a>
+            {% endif %}
+            {% if post.get_siguiente %}
+            <a href="{{ post.get_siguiente.get_absolute_url }}" class="derecha">{{ post.get_siguiente.titulo }}</a>        
+            {% endif %}
+        </aside>
+
         {% if post.tags.names %}  
         <aside class="etiquetas">
             <p><label>Etiquetas: </label>

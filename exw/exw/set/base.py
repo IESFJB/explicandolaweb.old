@@ -2,22 +2,21 @@
 
 ########### BASE SETTINGS
 
+import os
 from unipath import Path
 PROJECT_DIR = Path(__file__).ancestor(3)
 MEDIA_ROOT = PROJECT_DIR.child("media")
 STATIC_ROOT = PROJECT_DIR.child("static")
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 TEMPLATE_DIRS = (
     PROJECT_DIR.child("templates"),
 )
 
-
-import os
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.environ["KEY_DJANGO"]
 
@@ -29,7 +28,6 @@ INSTALLED_APPS = (
     'admin_tools.dashboard',
     'django.contrib.auth',
     'django.contrib.sites',
-    'django.contrib.admin',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -100,6 +98,5 @@ TINYMCE_DEFAULT_CONFIG = {
 
     'file_browser_callback': 'mce_filebrowser',
 }
-
 TINYMCE_SPELLCHECKER = True
 TINYMCE_COMPRESSOR = True

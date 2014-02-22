@@ -29,6 +29,15 @@
             </div><!-- end of contenido-articulo -->
         </article>
 
+        <aside class="navegacion">
+            {% if articulo.get_anterior %}
+            <a href="{{ articulo.get_anterior.get_absolute_url }}" class="izquierda">{{ articulo.get_anterior.titulo }}</a>
+            {% endif %}
+            {% if articulo.get_siguiente %}
+            <a href="{{ articulo.get_siguiente.get_absolute_url }}" class="derecha">{{ articulo.get_siguiente.titulo }}</a>        
+            {% endif %}
+        </aside>
+
         {% if articulo.tags.names %}  
         <aside class="etiquetas">
             <p><label>Etiquetas: </label>

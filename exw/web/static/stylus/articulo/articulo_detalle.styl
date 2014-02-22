@@ -99,16 +99,16 @@ article.articulo-detalle
                     margin-left 1em
                 &.youtube
                     &:before
-                        content "\e62d"
+                        content "\e601"
                 &.facebook
                     &:before
-                        content "\e628"
+                        content "\e61e"
                 &.twitter
                     &:before
-                        content "\e624"
+                        content "\e61f"
                 &.google
                     &:before
-                        content "\e627"
+                        content "\e620"
                 &:first-child
                     margin-left 1em
 
@@ -188,17 +188,69 @@ aside.autor
                     margin-left 1em
                 &.youtube
                     &:before
-                        content "\e62d"
+                        content "\e601"
                         color AzulClaro
                 &.facebook
                     &:before
-                        content "\e628"
+                        content "\e61e"
                         color AzulClaro
                 &.twitter
                     &:before
-                        content "\e624"
+                        content "\e61f"
                         color AzulClaro
                 &.google
                     &:before
-                        content "\e627"
+                        content "\e620"
                         color AzulClaro
+
+aside.navegacion
+    background-color white
+    margin-bottom 32px
+    padding 16px
+    font-size 0
+
+a.izquierda
+    font-size 16px
+    display inline-block
+    vertical-align top
+    width 50%
+    color #4d4d4d !important
+    text-align left
+    &::before
+        font-family "icomoon"
+        font-size 2em
+        font-weight 100 !important
+        color #4d4d4d
+        content "\e625"
+        line-height 1em
+        margin-right .6em
+        display inline-block
+        vertical-align top
+        margin-top -.1em
+    &:hover
+        color AzulClaro !important
+        &::before
+            color AzulClaro
+
+a.derecha
+    font-size 16px
+    display inline-block
+    vertical-align top
+    width 50%
+    color #4d4d4d !important
+    text-align right
+    &::after
+        font-family "icomoon"
+        font-size 2em
+        font-weight 100 !important
+        color #4d4d4d
+        content "\e624"
+        line-height 1em
+        margin-left .6em
+        display inline-block
+        vertical-align top
+        margin-top -.1em
+    &:hover
+        color AzulClaro !important
+        &::after
+            color AzulClaro

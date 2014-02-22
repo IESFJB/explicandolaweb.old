@@ -5,7 +5,8 @@ from django.db import models
 
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
-from datetime import datetime    
+from datetime import datetime
+import os
 
 from tinymce.models import HTMLField
 from articulos.models import Articulo
@@ -28,7 +29,7 @@ class Curso(Articulo):
 class Capitulo(Articulo):
     curso = models.ForeignKey('Curso', related_name='Curso')
     orden = models.PositiveIntegerField(max_length=2, default=1)
-    imagen_destacada = models.ImageField(upload_to='capitulos/%Y/%m/%d/')
+    imagen_destacada = models.ImageField(upload_to='capitulos/')
 
     class Meta:
         verbose_name = u'Capítulo'
@@ -59,3 +60,20 @@ class Capitulo(Articulo):
         else:
             siguiente = False
         return siguiente
+
+    def save(self, *args, **kwargs):
+
+        super(Capitulo, self).save(*args, **kwargs)
+
+        # Obtener extensión del archivo
+        nombre    = os.path.splitext(str(self.imagen_destacada))[0]
+        extension = os.path.splitext(str(self.imagen_destacada))[1]
+
+        trozos = nombre.split('/')
+        if trozos[len(trozos)-1] != str(self.pk):
+            os.rename("media/"+str(self.imagen_destacada),"media/capitulos/"+str(self.pk)+extension)
+            self.imagen_destacada = "capitulos/"+str(self.pk)+extension
+        else:
+            print "no entra"
+
+        super(Capitulo, self).save(*args, **kwargs)

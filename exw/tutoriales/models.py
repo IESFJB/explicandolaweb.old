@@ -7,12 +7,13 @@ from taggit.managers import TaggableManager
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
 from datetime import datetime    
+import os
 
 from articulos.models import Articulo
 
 class Tutorial(Articulo):
     tags = TaggableManager(blank=True)
-    imagen_destacada = models.ImageField(upload_to='tutoriales/%Y/%m/%d/')
+    imagen_destacada = models.ImageField(upload_to='tutoriales/')
     video = models.CharField(max_length=100, blank=True, null=True)
     publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
     nivel = models.PositiveSmallIntegerField(default=0, blank=True, null=False)
@@ -31,7 +32,7 @@ class Tutorial(Articulo):
         return '%s - Explicando la Web' % self.titulo
 
     def get_anterior(self):
-        anterior = Articulo.objects.filter(creado__lt=self.creado).order_by('creado')
+        anterior = Tutorial.objects.filter(publicacion__lt=self.publicacion).order_by('publicacion')
         if anterior.count() > 0:
             anterior = anterior[0]
         else:
@@ -39,7 +40,7 @@ class Tutorial(Articulo):
         return anterior
 
     def get_siguiente(self):
-        siguiente = Articulo.objects.filter(creado__gt=self.creado).order_by('creado')
+        siguiente = Tutorial.objects.filter(publicacion__gt=self.publicacion).order_by('publicacion')
         if siguiente.count() > 0:
             siguiente = siguiente[0]
         else:
@@ -52,13 +53,15 @@ class Tutorial(Articulo):
                 tut.destacado = False
                 tut.save()
         super(Tutorial, self).save(*args, **kwargs)
-        import os
-        fo = open("media/"+str(self.imagen_destacada), "r+")
-        fileName, fileExtension = os.path.splitext(fo.name)
-        print fileName
-        print fileExtension
-        fileName = fileName+"aaaaaaaa"
-        os.rename("media/"+str(self.imagen_destacada),"media/"+fileName+fileExtension)
 
+        # Obtener extensión del archivo
+        nombre    = os.path.splitext(str(self.imagen_destacada))[0]
+        extension = os.path.splitext(str(self.imagen_destacada))[1]
 
-
+        trozos = nombre.split('/')
+        if trozos[len(trozos)-1] != str(self.pk):
+            os.rename("media/"+str(self.imagen_destacada),"media/tutoriales/"+str(self.pk)+extension)
+            self.imagen_destacada = "tutoriales/"+str(self.pk)+extension
+        else:
+            print "no entra"
+        super(Tutorial, self).save(*args, **kwargs)

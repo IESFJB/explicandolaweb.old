@@ -81,10 +81,10 @@ body{background-color:#f1f4f9}
 #wrapper >header div.rrss a:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
 #wrapper >header div.rrss a:before{font-family:"icomoon";font-size:1.6em;font-weight:100 !important;color:#09c}
 #wrapper >header div.rrss a+a{margin-left:2em}
-#wrapper >header div.rrss a.youtube:before{content:"\e62d";color:#09c}
-#wrapper >header div.rrss a.facebook:before{content:"\e628";color:#09c}
-#wrapper >header div.rrss a.twitter:before{content:"\e624";color:#09c}
-#wrapper >header div.rrss a.google:before{content:"\e627";color:#09c}
+#wrapper >header div.rrss a.youtube:before{content:"\e601";color:#09c}
+#wrapper >header div.rrss a.facebook:before{content:"\e61e";color:#09c}
+#wrapper >header div.rrss a.twitter:before{content:"\e61f";color:#09c}
+#wrapper >header div.rrss a.google:before{content:"\e620";color:#09c}
 #wrapper >header div.rrss div.buscador{display:inline-block;vertical-align:top;margin-left:4em;}
 #wrapper >header div.rrss div.buscador input{font-size:.9em;padding:.2em .4em;width:160px;-webkit-box-shadow:none;box-shadow:none;border:1px solid #fff;display:none}
 #wrapper >header div.rrss div.buscador a.buscar{opacity:.7;filter:alpha(opacity=70);}
@@ -105,10 +105,10 @@ body{background-color:#f1f4f9}
 #wrapper >footer div.rrss a:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
 #wrapper >footer div.rrss a:before{font-family:"icomoon";font-size:1.6em;font-weight:100 !important;color:#09c}
 #wrapper >footer div.rrss a+a{margin-left:2em}
-#wrapper >footer div.rrss a.youtube:before{content:"\e62d";color:#09c}
-#wrapper >footer div.rrss a.facebook:before{content:"\e628";color:#09c}
-#wrapper >footer div.rrss a.twitter:before{content:"\e624";color:#09c}
-#wrapper >footer div.rrss a.google:before{content:"\e627";color:#09c}
+#wrapper >footer div.rrss a.youtube:before{content:"\e601";color:#09c}
+#wrapper >footer div.rrss a.facebook:before{content:"\e61e";color:#09c}
+#wrapper >footer div.rrss a.twitter:before{content:"\e61f";color:#09c}
+#wrapper >footer div.rrss a.google:before{content:"\e620";color:#09c}
 section.navegacion ul{list-style:none;padding:0;margin:0;text-align:center;}
 section.navegacion ul li{display:inline-block;vertical-align:top;margin-right:1em;}
 section.navegacion ul li a{display:block;padding:.2em .5em;color:#09c;border:1px solid #09c;-webkit-transition:400ms;transition:400ms;}
@@ -170,10 +170,11 @@ ol.linenums li{margin-bottom:.4em;font-size:.9em;border-bottom:1px dashed #e4e4e
 .callout.info::before{content:"\e612"}
 .callout.danger::before{content:"\e614"}
 .callout.warning::before{content:"\e619"}
-.github{margin:2em 0;padding:1em;font-size:.9em;font-weight:200;position:relative;background-color:#eef1f8;padding-left:5.5em;width:60%;margin-left:auto;margin-right:auto;}
-.github::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e622";margin-right:.8em;display:inline-block;vertical-align:top;position:absolute;top:40%;margin-top:-12px;left:1em;line-height:1.4em}
-.github:hover::before{color:#000;opacity:1;filter:alpha(opacity=100)}
-.github a{border-bottom:1px solid #09c}
+.recurso{margin:2em 0;padding:1em;font-size:.9em;font-weight:200;position:relative;background-color:#eef1f8;padding-left:5.5em;width:60%;margin-left:auto;margin-right:auto;}
+.recurso.github::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e622";margin-right:.8em;display:inline-block;vertical-align:top;position:absolute;top:40%;margin-top:-12px;left:1em;line-height:1.4em}
+.recurso.documentacion::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e623";margin-right:.8em;display:inline-block;vertical-align:top;position:absolute;top:40%;margin-top:-12px;left:1em;line-height:1.4em}
+.recurso.ejemplo::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e621";margin-right:.8em;display:inline-block;vertical-align:top;position:absolute;top:40%;margin-top:-12px;left:1em;line-height:1.4em}
+.recurso a{border-bottom:1px solid #09c}
 blockquote{font-size:1.4em;line-height:1.2em;font-family:'Dosis',sans-serif;font-style:italic;font-weight:100;margin:1em 4em .5em 4em;color:#4d4d4d;}
 blockquote::before{font-family:'Open Sans',sans-serif;font-size:1em;content:'"';display:inline-block;margin-right:.2em}
 blockquote::after{font-family:'Open Sans',sans-serif;font-size:1em;content:'"';display:inline-block;margin-left:.2em}
@@ -225,10 +226,10 @@ article.articulo-detalle aside.comparteme p{margin:0;color:#fff;-webkit-transfor
 article.articulo-detalle aside.comparteme p a{margin-top:.5em;display:inline-block;vertical-align:middle;margin-left:0;-webkit-transition:all .3s;transition:all .3s;font-size:.7em;text-shadow:none;}
 article.articulo-detalle aside.comparteme p a:before{font-family:"icomoon";font-size:1.6em;font-weight:100 !important;color:#fff}
 article.articulo-detalle aside.comparteme p a+a{margin-left:1em}
-article.articulo-detalle aside.comparteme p a.youtube:before{content:"\e62d"}
-article.articulo-detalle aside.comparteme p a.facebook:before{content:"\e628"}
-article.articulo-detalle aside.comparteme p a.twitter:before{content:"\e624"}
-article.articulo-detalle aside.comparteme p a.google:before{content:"\e627"}
+article.articulo-detalle aside.comparteme p a.youtube:before{content:"\e601"}
+article.articulo-detalle aside.comparteme p a.facebook:before{content:"\e61e"}
+article.articulo-detalle aside.comparteme p a.twitter:before{content:"\e61f"}
+article.articulo-detalle aside.comparteme p a.google:before{content:"\e620"}
 article.articulo-detalle aside.comparteme p a:first-child{margin-left:1em}
 article.articulo-detalle div.contenido-articulo{width:100%;display:block;margin-top:1em;}
 article.articulo-detalle div.contenido-articulo h2{font-size:1.6em;line-height:1.2em;margin-top:0;margin-bottom:.5em;}
@@ -248,10 +249,19 @@ aside.autor div.perfil p.rrss a{display:inline-block;vertical-align:middle;margi
 aside.autor div.perfil p.rrss a:hover{-webkit-transform:rotate(360deg);-ms-transform:rotate(360deg);transform:rotate(360deg)}
 aside.autor div.perfil p.rrss a:before{font-family:"icomoon";font-size:1.6em;font-weight:100 !important;color:#09c}
 aside.autor div.perfil p.rrss a+a{margin-left:1em}
-aside.autor div.perfil p.rrss a.youtube:before{content:"\e62d";color:#09c}
-aside.autor div.perfil p.rrss a.facebook:before{content:"\e628";color:#09c}
-aside.autor div.perfil p.rrss a.twitter:before{content:"\e624";color:#09c}
-aside.autor div.perfil p.rrss a.google:before{content:"\e627";color:#09c}
+aside.autor div.perfil p.rrss a.youtube:before{content:"\e601";color:#09c}
+aside.autor div.perfil p.rrss a.facebook:before{content:"\e61e";color:#09c}
+aside.autor div.perfil p.rrss a.twitter:before{content:"\e61f";color:#09c}
+aside.autor div.perfil p.rrss a.google:before{content:"\e620";color:#09c}
+aside.navegacion{background-color:#fff;margin-bottom:32px;padding:16px;font-size:0}
+a.izquierda{font-size:16px;display:inline-block;vertical-align:top;width:50%;color:#4d4d4d !important;text-align:left;}
+a.izquierda::before{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e625";line-height:1em;margin-right:.6em;display:inline-block;vertical-align:top;margin-top:-.1em}
+a.izquierda:hover{color:#09c !important;}
+a.izquierda:hover::before{color:#09c}
+a.derecha{font-size:16px;display:inline-block;vertical-align:top;width:50%;color:#4d4d4d !important;text-align:right;}
+a.derecha::after{font-family:"icomoon";font-size:2em;font-weight:100 !important;color:#4d4d4d;content:"\e624";line-height:1em;margin-left:.6em;display:inline-block;vertical-align:top;margin-top:-.1em}
+a.derecha:hover{color:#09c !important;}
+a.derecha:hover::after{color:#09c}
 section.listado-articulos{background-color:#fff;padding:32px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;font-size:0;}
 section.listado-articulos h3{font-size:20px;text-transform:uppercase;color:#000;margin-bottom:16px}
 section.listado-articulos article{font-size:16px;display:inline-block;vertical-align:top;width:30%;margin-right:5%;margin-bottom:2.6em;}

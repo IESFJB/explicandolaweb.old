@@ -31,4 +31,5 @@ apache2/
 bin/
 lib/
 exw/static
+exw/media/*
 

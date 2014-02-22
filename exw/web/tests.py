@@ -163,9 +163,9 @@ class ExwTest(TestCase):
         response = self.client.get(self.post.get_absolute_url())
         self.assertEqual(200, response.status_code)
 
-        # #Contacto
-        # response = self.client.get('/contacto/')
-        # self.assertEqual(200, response.status_code)
+        #Exe
+        response = self.client.get('/exw/')
+        self.assertEqual(200, response.status_code)
 
         #404
         response = self.client.get('/hola-que-ase/')

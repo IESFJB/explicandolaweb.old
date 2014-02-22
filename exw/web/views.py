@@ -66,7 +66,7 @@ class Home(TemplateView):
 home = Home.as_view()
 
 
-@class_view_decorator(login_required)
+#@class_view_decorator(login_required)
 class Tutoriales(TemplateView):
     template_name = "tutoriales.html"
 
@@ -81,7 +81,7 @@ class Tutoriales(TemplateView):
 tutoriales = Tutoriales.as_view()
 
 
-@class_view_decorator(login_required)
+#@class_view_decorator(login_required)
 class Cursos(TemplateView):
     template_name = "cursos/curso_list.html"
 
@@ -96,7 +96,7 @@ class Cursos(TemplateView):
 cursos = Cursos.as_view()
 
 
-@class_view_decorator(login_required)
+#@class_view_decorator(login_required)
 class Blog(TemplateView):
     template_name = "blog.html"
 
@@ -111,7 +111,7 @@ class Blog(TemplateView):
 blog = Blog.as_view()
 
 
-@class_view_decorator(login_required)
+#@class_view_decorator(login_required)
 class Exw(TemplateView):
     template_name = "exw.html"
 
