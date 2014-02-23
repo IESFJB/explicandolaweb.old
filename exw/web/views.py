@@ -29,7 +29,7 @@ class Previa(TemplateView):
 previa = Previa.as_view()
 
 
-@class_view_decorator(login_required)
+#@class_view_decorator(login_required)
 class Home(TemplateView):
     template_name = "home.html"
 
