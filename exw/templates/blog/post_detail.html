@@ -2,6 +2,19 @@
 
 {% block title %}Título del Tutorial - Explicando la Web{% endblock %}
 
+{% block AutorGoogle %}
+        <link rel="author" href="https://google.com/+{{ post.autor.perfil.google }}">
+        <meta name="twitter:site" content="@{{ post.autor.perfil.twitter }}" />
+{% endblock %}
+
+{% block MetaFacebook %}
+        <!-- Metadatos para Facebook -->
+        <meta property="og:title"       content="{{ post.titulo }} - Explicando la Web"                                  />
+        <meta property="og:url"         content="http://explicandolaweb.com{{ post.get_absolute_url }}"                  />
+        <meta property="og:image"       content="http://explicandolaweb.com/media/{{ post.imagen_destacada }}"           />
+        <meta property="og:description" content="{{ post.extracto|striptags }}"                                          />
+{% endblock %}
+
 {% load static from staticfiles %}
 
 {% block content %}

@@ -1,6 +1,23 @@
 {% extends "layout.html" %}
 
-{% block title %}Título del Tutorial - Explicando la Web{% endblock %}
+{% block title %}{{ capitulo.titulo }}, Curso de {{ capitulo.curso.titulo }} - Explicando la Web{% endblock %}
+
+{% block MetaDescription %}
+        <meta name="description" content=" {{ capitulo.extracto|striptags }}" />
+{% endblock %}
+
+{% block AutorGoogle %}
+        <link rel="author" href="https://google.com/+{{ capitulo.autor.perfil.google }}">
+        <meta name="twitter:site" content="@{{ capitulo.autor.perfil.twitter }}" />
+{% endblock %}
+
+{% block MetaFacebook %}
+        <!-- Metadatos para Facebook -->
+        <meta property="og:title"       content="{{ capitulo.titulo }} - Explicando la Web"                                  />
+        <meta property="og:url"         content="http://explicandolaweb.com{{ capitulo.get_absolute_url }}"                  />
+        <meta property="og:image"       content="http://explicandolaweb.com/media/{{ capitulo.imagen_destacada }}"           />
+        <meta property="og:description" content="{{ capitulo.extracto|striptags }}"                                          />
+{% endblock %}
 
 {% load static from staticfiles %}
 

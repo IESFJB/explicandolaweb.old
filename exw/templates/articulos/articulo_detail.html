@@ -2,6 +2,10 @@
 
 {% block title %}{{ articulo.titulo }} - Explicando la Web{% endblock %}
 
+{% block MetaDescription %}
+        <meta name="description" content=" {{ articulo.extracto|striptags }}" />
+{% endblock %}
+
 {% load static from staticfiles %}
 
 {% block content %}
