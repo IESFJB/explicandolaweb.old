@@ -11,9 +11,9 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^$',          'web.views.previa',         name='previa'),
+    #url(r'^$',          'web.views.previa',         name='previa'),
 
-    url(r'^home/$',     'web.views.home',           name='home'),
+    url(r'^$',     'web.views.home',           name='home'),
 
     url(r'^error/$',    'web.views.error_template', name='error_template'),
 
