@@ -62,9 +62,9 @@ class Tutorial(Articulo):
 
         solo_nombre = nombre.split('/')
         solo_nombre = solo_nombre[len(solo_nombre)-1]
-        if solo_nombre != str(self.pk):
-            media_blog = settings.MEDIA_ROOT.child('tutoriales')
-            p = Path(media_blog, solo_nombre+extension)
-            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
-            self.imagen_destacada = 'tutoriales/'+str(self.pk)+'-'+slugify(self.titulo)+extension
-            super(Tutorial, self).save(*args, **kwargs)
+        #if solo_nombre != str(self.pk)+'-'+slugify(self.titulo):
+        media_blog = settings.MEDIA_ROOT.child('tutoriales')
+        p = Path(media_blog, solo_nombre+extension)
+        p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+        self.imagen_destacada = 'tutoriales/'+str(self.pk)+'-'+slugify(self.titulo)+extension
+        super(Tutorial, self).save(*args, **kwargs)
