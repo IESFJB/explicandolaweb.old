@@ -13,7 +13,7 @@
         <meta name="description" content="Te ayudamos a entender la web y que no te pierdas en este gran mundo. Cursos y tutoriales de Django, Laravel, CSS y más." />
         {% endblock %}
         
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+        <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->       
         <meta name="author" content="Explicandolaweb" />
         <meta name="Revisit-after" content="15 days" />
         <!-- <meta name="robots" content="ALL,FOLLOW" /> -->
@@ -27,20 +27,20 @@
         <link rel="apple-touch-icon"                    href="{% static "img/00comun/favicono/apple-touch-icon-precomposed.png"  %}" />
         <link rel="shortcut icon"                       href="{% static "img/00comun/favicono/favicon.ico"                       %}" />
 
-		<meta property="og:locale" 		content="es_ES"				 />
-        <meta property="og:type"        content="website"  			 />
-        <meta property="og:site_name"   content="Explicando la Web"  />
+        <meta property="og:locale"      content="es_ES"                 />
+        <meta property="og:type"        content="website"               />
+        <meta property="og:site_name"   content="Explicando la Web"     />
  
         {% block AutorGoogle %}
-        <link rel="author" href="https://plus.google.com/+BienvenidoSaezMuelas/posts">
+        <link rel="author" href="https://plus.google.com/+Explicandolaweb2014/posts">
         <meta name="twitter:site" content="@explicandolaweb" />
         {% endblock %}
 
  		{% block MetaFacebook %}
         <!-- Metadatos para Facebook -->
-        <meta property="og:title"       content="Cursos y tutoriales para la web - Explicando la Web" />
-        <meta property="og:url"         content="http://explicandolaweb.com"        				  />
-        <meta property="og:image"       content="{% static "img/00comun/logo_exw_med.png" %}"		  />
+        <meta property="og:title"       content="Cursos y tutoriales para la web - Explicando la Web"   />
+        <meta property="og:url"         content="http://explicandolaweb.com"                            />
+        <meta property="og:image"       content="{% static "img/00comun/logo_exw_med.png" %}"           />
         {% endblock %}
 
         <!-- Google Fonts -->
@@ -52,11 +52,7 @@
 
         <!-- Normalize como único script que se carga en el header -->
         <script src="{% static "js/vendor/modernizr-2.6.2.min.js" %}"></script>
-
-        {% block jsHeader %}
-
-        {% endblock %}
-
+        {% block jsHeader %}{% endblock %}
     </head>
 
     <body>
@@ -70,11 +66,7 @@
 		          			<a target="blank" class="youtube"  href="http://youtube.com/explicandolaweb"></a>
 		          			<a target="blank" class="facebook" href="http://facebook.com/explicandolaweb"></a>
 		          			<a target="blank" class="twitter"  href="http://twitter.com/explicandolaweb"></a>
-		          			<a target="blank" class="google" rel="publisher" href="https://plus.google.com/114110850111163676103"></a>
-		          			<div class="buscador">
-	          					<input type="text" name="buscar" placeholder="Encuentra lo que buscas">
-                                <a href="" class="buscar"></a>          				
-		          			</div>
+		          			<a target="blank" class="google" rel="publisher" href="https://plus.google.com/+Explicandolaweb2014"></a>
 		          		</div>	          			
 	          		</div>
                 </div>

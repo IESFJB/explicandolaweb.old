@@ -290,10 +290,10 @@ article.articulo-destacado .social a{display:inline-block;vertical-align:middle;
 article.articulo-destacado .social a:before{font-family:"icomoon";color:#09c}
 article.articulo-destacado .social a:hover{color:#fff !important}
 article.articulo-destacado .social a+a{margin-left:1em}
-article.articulo-destacado .social a.youtube:before{content:"\e62d"}
-article.articulo-destacado .social a.facebook:before{content:"\e628"}
-article.articulo-destacado .social a.twitter:before{content:"\e624"}
-article.articulo-destacado .social a.google:before{content:"\e627"}
+article.articulo-destacado .social a.youtube:before{content:"\e601"}
+article.articulo-destacado .social a.facebook:before{content:"\e61e"}
+article.articulo-destacado .social a.twitter:before{content:"\e61f"}
+article.articulo-destacado .social a.google:before{content:"\e620"}
 .etiquetas{padding:1em 2em;margin-bottom:2em;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;background-color:#fff;border-top:1px solid transparent;border-left:1px solid transparent;}
 .etiquetas label::before{font-family:"icomoon";font-size:1.2em;font-weight:100 !important;color:#09c;content:"\e607";color:#09c;margin-right:.4em}
 .etiquetas p{font-family:'Dosis',sans-serif;text-transform:uppercase}
