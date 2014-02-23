@@ -9,7 +9,6 @@ from django.core.urlresolvers import reverse
 from datetime import datetime
 from django.conf import settings
 from unipath import Path
-from django.utils.text import slugify
 import os
 
 from articulos.models import Articulo

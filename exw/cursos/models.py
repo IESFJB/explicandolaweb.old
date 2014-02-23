@@ -6,6 +6,8 @@ from django.db import models
 from django.template.defaultfilters import slugify
 from django.core.urlresolvers import reverse
 from datetime import datetime
+from django.conf import settings
+from unipath import Path
 import os
 
 from tinymce.models import HTMLField
@@ -15,7 +17,7 @@ from articulos.models import Articulo
 class Curso(Articulo):
     ncapitulos = models.PositiveIntegerField(max_length=2, blank=True, null=True, verbose_name=u'Número de capítulos')
     temario = HTMLField(blank=True)
-    imagen_destacada = models.ImageField(upload_to='cursos/%Y/%m/%d/')
+    imagen_destacada = models.ImageField(upload_to='cursos/')
     publicacion = models.DateTimeField("F. de Publicación", default=datetime.now)
 
     class Meta:
@@ -25,6 +27,21 @@ class Curso(Articulo):
     def get_absolute_url(self):
         return reverse('cursos.views.detalle_curso', kwargs={'pk': self.pk, 'slug': slugify(self.titulo)})
 
+    def save(self, *args, **kwargs):
+        super(Curso, self).save(*args, **kwargs)
+
+        # Obtener extensión del archivo y la ruta
+        nombre    = os.path.splitext(str(self.imagen_destacada))[0]
+        extension = os.path.splitext(str(self.imagen_destacada))[1]
+
+        solo_nombre = nombre.split('/')
+        solo_nombre = solo_nombre[len(solo_nombre)-1]
+        if solo_nombre != str(self.pk):
+            media_blog = settings.MEDIA_ROOT.child('cursos')
+            p = Path(media_blog, solo_nombre+extension)
+            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+            self.imagen_destacada = 'cursos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
+            super(Curso, self).save(*args, **kwargs)
 
 class Capitulo(Articulo):
     curso = models.ForeignKey('Curso', related_name='Curso')
@@ -62,18 +79,17 @@ class Capitulo(Articulo):
         return siguiente
 
     def save(self, *args, **kwargs):
-
         super(Capitulo, self).save(*args, **kwargs)
 
-        # Obtener extensión del archivo
+        # Obtener extensión del archivo y la ruta
         nombre    = os.path.splitext(str(self.imagen_destacada))[0]
         extension = os.path.splitext(str(self.imagen_destacada))[1]
 
-        trozos = nombre.split('/')
-        if trozos[len(trozos)-1] != str(self.pk):
-            os.rename("media/"+str(self.imagen_destacada),"media/capitulos/"+str(self.pk)+extension)
-            self.imagen_destacada = "capitulos/"+str(self.pk)+extension
-        else:
-            print "no entra"
-
-        super(Capitulo, self).save(*args, **kwargs)
+        solo_nombre = nombre.split('/')
+        solo_nombre = solo_nombre[len(solo_nombre)-1]
+        if solo_nombre != str(self.pk):
+            media_blog = settings.MEDIA_ROOT.child('capitulos')
+            p = Path(media_blog, solo_nombre+extension)
+            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+            self.imagen_destacada = 'capitulos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
+            super(Capitulo, self).save(*args, **kwargs)

@@ -7,8 +7,9 @@ from taggit.managers import TaggableManager
 from django.core.urlresolvers import reverse
 from django.template.defaultfilters import slugify
 from datetime import datetime
+from django.conf import settings
+from unipath import Path
 import os
-
 
 class Post(Articulo):
     tags = TaggableManager(blank=True)
@@ -44,14 +45,15 @@ class Post(Articulo):
                 post.save()
         super(Post, self).save(*args, **kwargs)
 
-        # Obtener extensión del archivo
+        # Obtener extensión del archivo y la ruta
         nombre    = os.path.splitext(str(self.imagen_destacada))[0]
         extension = os.path.splitext(str(self.imagen_destacada))[1]
 
-        trozos = nombre.split('/')
-        if trozos[len(trozos)-1] != str(self.pk):
-            #os.rename("media/"+str(self.imagen_destacada),"media/blog/"+str(self.pk)+extension)
-            os.rename(str(self.imagen_destacada),"blog/"+str(self.pk)+extension)
-            self.imagen_destacada = "blog/"+str(self.pk)+extension
-            #self.imagen_destacada ="media/"+str(self.imagen_destacada)
+        solo_nombre = nombre.split('/')
+        solo_nombre = solo_nombre[len(solo_nombre)-1]
+        if solo_nombre != str(self.pk):
+            media_blog = settings.MEDIA_ROOT.child('blog')
+            p = Path(media_blog, solo_nombre+extension)
+            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+            self.imagen_destacada = 'blog/'+str(self.pk)+'-'+slugify(self.titulo)+extension
             super(Post, self).save(*args, **kwargs)
