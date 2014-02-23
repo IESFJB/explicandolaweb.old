@@ -36,12 +36,12 @@ class Curso(Articulo):
 
         solo_nombre = nombre.split('/')
         solo_nombre = solo_nombre[len(solo_nombre)-1]
-        if solo_nombre != str(self.pk):
-            media_blog = settings.MEDIA_ROOT.child('cursos')
-            p = Path(media_blog, solo_nombre+extension)
-            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
-            self.imagen_destacada = 'cursos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
-            super(Curso, self).save(*args, **kwargs)
+        #if solo_nombre != str(self.pk):
+        media_blog = settings.MEDIA_ROOT.child('cursos')
+        p = Path(media_blog, solo_nombre+extension)
+        p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+        self.imagen_destacada = 'cursos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
+        super(Curso, self).save(*args, **kwargs)
 
 class Capitulo(Articulo):
     curso = models.ForeignKey('Curso', related_name='Curso')
@@ -87,9 +87,9 @@ class Capitulo(Articulo):
 
         solo_nombre = nombre.split('/')
         solo_nombre = solo_nombre[len(solo_nombre)-1]
-        if solo_nombre != str(self.pk):
-            media_blog = settings.MEDIA_ROOT.child('capitulos')
-            p = Path(media_blog, solo_nombre+extension)
-            p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
-            self.imagen_destacada = 'capitulos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
-            super(Capitulo, self).save(*args, **kwargs)
+        #if solo_nombre != str(self.pk):
+        media_blog = settings.MEDIA_ROOT.child('capitulos')
+        p = Path(media_blog, solo_nombre+extension)
+        p.rename(p.parent+'/'+str(self.pk)+'-'+slugify(self.titulo)+extension)
+        self.imagen_destacada = 'capitulos/'+str(self.pk)+'-'+slugify(self.titulo)+extension
+        super(Capitulo, self).save(*args, **kwargs)
