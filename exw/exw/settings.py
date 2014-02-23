@@ -6,7 +6,7 @@ from unipath import Path
 PROJECT_DIR = Path(__file__).ancestor(2)
 MEDIA_ROOT = PROJECT_DIR.child("media")
 STATIC_ROOT = PROJECT_DIR.child("static")
-STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
+#STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.CachedStaticFilesStorage'
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL  = '/static/'
