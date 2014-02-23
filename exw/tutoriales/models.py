@@ -62,6 +62,4 @@ class Tutorial(Articulo):
         if trozos[len(trozos)-1] != str(self.pk):
             os.rename("media/"+str(self.imagen_destacada),"media/tutoriales/"+str(self.pk)+extension)
             self.imagen_destacada = "tutoriales/"+str(self.pk)+extension
-        else:
-            print "no entra"
-        super(Tutorial, self).save(*args, **kwargs)
+            super(Tutorial, self).save(*args, **kwargs)
