@@ -50,8 +50,7 @@ class Post(Articulo):
 
         trozos = nombre.split('/')
         if trozos[len(trozos)-1] != str(self.pk):
-            os.rename("media/"+str(self.imagen_destacada),"media/blog/"+str(self.pk)+extension)
+            #os.rename("media/"+str(self.imagen_destacada),"media/blog/"+str(self.pk)+extension)
             self.imagen_destacada = "blog/"+str(self.pk)+extension
-        else:
-            print "no entra"
-        super(Post, self).save(*args, **kwargs)
+            self.imagen_destacada "media/"+str(self.imagen_destacada)
+            super(Post, self).save(*args, **kwargs)
