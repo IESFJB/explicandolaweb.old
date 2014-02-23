@@ -6,11 +6,10 @@
         <title>{% block title %}Título a sustituir mediante bloque{% endblock %}</title>
 
         <meta name="robots" content="noindex">
-        <meta name="Keywords" content="" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         
         {% block MetaDescription %}
-        <meta name="description" content="" />
+        <meta name="description" content="Te ayudamos a entender la web y que no te pierdas en este gran mundo. Cursos y tutoriales de Django, Laravel, CSS y más." />
         {% endblock %}
         
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
@@ -30,6 +29,10 @@
 		<meta property="og:locale" 		content="es_ES"				 />
         <meta property="og:type"        content="website"  			 />
         <meta property="og:site_name"   content="Explicando la Web"  />
+ 
+        {% block AutorGoogle %}
+        <link rel="author" href="https://plus.google.com/114110850111163676103/posts">
+        {% endblock %}
 
  		{% block MetaFacebook %}
         <!-- Metadatos para Facebook -->
