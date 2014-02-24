@@ -116,3 +116,20 @@ class Exw(TemplateView):
     template_name = "exw.html"
 
 exw = Exw.as_view()
+
+class Tag(TemplateView):
+    template_name = "tag.html"
+
+    def get_context_data(self, **kwargs):
+        context = super(Tag, self).get_context_data(**kwargs)
+        slug = self.kwargs['slug']
+        tutoriales  = Tutorial.objects.filter(tags__name__in=[slug])
+        posts       = Post.objects.filter(tags__name__in=[slug])
+        if tutoriales.count() > 0:
+            context['tutoriales'] = tutoriales
+        if posts.count() > 0:
+            context['posts'] = posts
+        return context
+
+tag = Tag.as_view()
+

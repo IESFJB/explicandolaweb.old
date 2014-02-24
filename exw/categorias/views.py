@@ -6,6 +6,11 @@ from .models import Categoria
 from django.shortcuts import get_object_or_404
 from tutoriales.models import Tutorial
 from cursos.models import Curso
+from django.views.generic import TemplateView
+
+
+class DetalleCategoria(TemplateView):
+    template_name = "404.html"
 
 
 class DetalleCategoriaTutorial(DetailView):

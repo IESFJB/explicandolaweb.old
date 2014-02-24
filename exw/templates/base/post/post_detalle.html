@@ -36,7 +36,7 @@
         <aside class="etiquetas">
             <p><label>Etiquetas: </label>
             {% for etiqueta in post.tags.names %}
-                <a href="">{{etiqueta}}</a>
+                <a href="/tag/{{etiqueta}}">{{etiqueta}}</a>
             {% endfor %}
             </p>
         </aside>

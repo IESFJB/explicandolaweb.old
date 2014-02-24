@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}Cursos y tutoriales de Django, Laravel, Wordpress y más para la web - Explicando la Web{% endblock %}
+
+{% load static from staticfiles %}
+
+{% block content %}
+<section id="centro">
+    <div class="contenido">
+
+
+        <div id="principal">
+        <aside class="etiquetas">
+            <p><label>Entradas y tutoriales con: </label>
+                <a href="/tag/{{slug}}">{{ slug }}</a></p>
+        </aside>
+
+            <section class="listado-articulos">
+                {% if tutoriales %}
+                <h2>Tutoriales</h2>
+                <div class="articulos">
+                    {% for articulo in tutoriales %}
+                        {% include 'base/articulo/articulo_en_listado.html' %}
+                    {% endfor %}
+                </div> <!-- /articulos -->
+                {% endif %}
+                
+                {% if posts %}
+                <h2>Entradas del blog</h2>
+                <div class="articulos">
+                    {% for post in posts %}
+                        {% include 'base/post/post_en_listado.html' %}
+                    {% endfor %}
+                </div> <!-- /articulos -->
+                {% endif %}            
+            </section>  
+
+        </div>
+
+        {% include 'secciones/sidebar_tutoriales.html' %}
+
+    </div> <!-- end of contenido -->
+</section>
+{% endblock %}

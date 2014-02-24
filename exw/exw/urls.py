@@ -11,25 +11,27 @@ admin.autodiscover()
 
 urlpatterns = patterns('',
 
-    url(r'^$',          'web.views.previa',         name='previa'),
+    url(r'^$',          'web.views.previa',                     name='previa'),
 
-    url(r'^home/$',     'web.views.home',           name='home'),
+    url(r'^home/$',     'web.views.home',                       name='home'),
 
-    url(r'^error/$',    'web.views.error_template', name='error_template'),
+    url(r'^error/$',    'web.views.error_template',             name='error_template'),
 
-    url(r'^tutoriales/$', 'web.views.tutoriales',   name='tutoriales'),
+    url(r'^tutoriales/$', 'web.views.tutoriales',               name='tutoriales'),
 
     url(r'^tutoriales/', include('tutoriales.urls')),
 
-    url(r'^cursos/$',   'web.views.cursos',         name='cursos'),
+    url(r'^cursos/$',   'web.views.cursos',                     name='cursos'),
 
     url(r'^cursos/',    include('cursos.urls')),
 
-    url(r'^blog/$',     'web.views.blog',           name='blog'),
+    url(r'^blog/$',     'web.views.blog',                       name='blog'),
 
     url(r'^blog/',      include('blog.urls')), 
 
-    url(r'^exw/$',      'web.views.exw',            name='exw'),
+    url(r'^exw/$',      'web.views.exw',                        name='exw'),
+
+    url(r'^tag/(?P<slug>[\w-]+)/$',      'web.views.tag',       name='tag'),
 
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', {
             'document_root': settings.MEDIA_ROOT}),
